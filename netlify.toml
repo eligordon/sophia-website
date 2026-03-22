@@ -1,5 +1,7 @@
-# Netlify + TinaCloud: connect this repo, then set NEXT_PUBLIC_TINA_CLIENT_ID and
-# TINA_TOKEN under Site configuration → Environment variables (see .env.example).
+# Netlify + TinaCloud: set NEXT_PUBLIC_TINA_CLIENT_ID + TINA_TOKEN in
+# Site configuration → Environment variables (see .env.example).
+#
+# Use build:cloud — NOT npm run build (local build embeds localhost GraphQL).
 
 [build]
   command = "npm run build:cloud"
@@ -7,3 +9,22 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# ── "local Tina schema doesn't match the remote Tina schema" ───────────────
+# TinaCloud keeps a schema hash from your GitHub branch. Netlify runs
+# tinacms build and compares its freshly generated schema to that hash.
+#
+# Common causes:
+#   • You pushed tina/config.ts (or related) changes but TinaCloud has not
+#     finished re-indexing yet (webhook delay — often a few minutes).
+#   • tina/tina-lock.json on GitHub is out of date vs tina/config.ts.
+#
+# What to do:
+#   1. On your machine: npm run build  (with Node; regenerates tina-lock + __generated__)
+#   2. Commit and push tina/config.ts, tina/tina-lock.json, and tina/__generated__/
+#      if your team tracks those files.
+#   3. In TinaCloud, confirm "last indexed" is AFTER that commit (wait, refresh).
+#   4. In Netlify: Deploys → "Retry deploy" (or push an empty commit).
+#
+# FAQ: https://tina.io/docs/r/FAQ/
+# Avoid tinacms build --skip-cloud-checks on Netlify except as a last resort.
