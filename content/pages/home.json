@@ -127,7 +127,7 @@
     "groupIntro": "Workshops for schools, community organizations, and individuals who want Sophia to facilitate body literacy for their students, members, or groups.",
     "individualCards": [
       {
-        "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80",
+        "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=975&q=80",
         "imageAlt": "Small group learning",
         "badge": "Active Enrollment",
         "title": "Charting 101: Becoming Bodywise",
@@ -139,7 +139,7 @@
         "ctaLabel": "Register Now"
       },
       {
-        "image": "https://images.unsplash.com/photo-1512438248408-28ff50863b1b?auto=format&fit=crop&w=400&q=80",
+        "image": "https://images.unsplash.com/photo-1714976694895-d38078c1a3c0?auto=format&fit=crop&w=975&q=80",
         "imageAlt": "One-on-one coaching",
         "badge": "",
         "title": "Private coaching package",
@@ -153,7 +153,7 @@
     ],
     "groupCards": [
       {
-        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80",
+        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=975&q=80",
         "imageAlt": "Youth workshop",
         "badge": "",
         "title": "Period Positivity Workshop",
@@ -165,7 +165,7 @@
         "ctaLabel": "Book a workshop"
       },
       {
-        "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80",
+        "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=975&q=80",
         "imageAlt": "Perimenopause education",
         "badge": "",
         "title": "Perimenopause Unlocked",
@@ -177,7 +177,7 @@
         "ctaLabel": "Book a lab"
       },
       {
-        "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80",
+        "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=975&q=80",
         "imageAlt": "Community fertility awareness talk",
         "badge": "",
         "title": "Fertility Awareness 101",
