@@ -28,3 +28,6 @@
 #
 # FAQ: https://tina.io/docs/r/FAQ/
 # Avoid tinacms build --skip-cloud-checks on Netlify except as a last resort.
+#
+# Do not use Netlify-only env vars (e.g. URL) in tina/config.ts for anything that
+# changes the serialized schema — TinaCloud indexes from Git without those vars.
