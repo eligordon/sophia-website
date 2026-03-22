@@ -23,6 +23,18 @@ export default defineConfig({
       mediaRoot: "uploads",
     },
   },
+  // Read-only site preview in the admin sidebar (not visual editing — no click-to-edit on DOM).
+  // Netlify sets URL during build; override with TINA_PREVIEW_URL if needed.
+  ui: {
+    previewUrl: () => {
+      const url =
+        process.env.TINA_PREVIEW_URL ||
+        process.env.URL ||
+        process.env.DEPLOY_PRIME_URL ||
+        "http://localhost:3000";
+      return { url };
+    },
+  },
   schema: {
     collections: [
       {
