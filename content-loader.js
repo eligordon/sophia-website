@@ -130,6 +130,7 @@
       ].forEach(function (p) {
         applyText(root, p, get(data, p));
       });
+      applyHtml(root, "about.trainingHtml", get(data, "about.trainingHtml"));
       applyAlt(root, "about.profileImageAlt", get(data, "about.profileImageAlt"));
       applyText(root, "about.profileImage", get(data, "about.profileImage"));
 
@@ -148,20 +149,33 @@
       });
 
       applyText(root, "offeringsSection.heading", get(data, "offeringsSection.heading"));
-      applyText(root, "offeringsSection.intro", get(data, "offeringsSection.intro"));
-      applyHtml(root, "offeringsSection.footerLine1", get(data, "offeringsSection.footerLine1"));
+      applyText(root, "offeringsSection.individualIntro", get(data, "offeringsSection.individualIntro"));
+      applyText(root, "offeringsSection.groupIntro", get(data, "offeringsSection.groupIntro"));
       applyText(root, "offeringsSection.footerLine2", get(data, "offeringsSection.footerLine2"));
 
-      var cards = get(data, "offeringsSection.cards") || [];
-      cards.forEach(function (_, i) {
-        var base = "offeringsSection.cards." + i;
-        applyText(root, base + ".image", get(data, base + ".image"));
-        applyAlt(root, base + ".imageAlt", get(data, base + ".imageAlt"));
-        ["title", "subtitle", "price", "priceNote", "ctaLabel"].forEach(function (f) {
-          applyText(root, base + "." + f, get(data, base + "." + f));
+      function applyOfferingCards(listKey) {
+        var cards = get(data, "offeringsSection." + listKey) || [];
+        cards.forEach(function (_, i) {
+          var base = "offeringsSection." + listKey + "." + i;
+          applyText(root, base + ".image", get(data, base + ".image"));
+          applyAlt(root, base + ".imageAlt", get(data, base + ".imageAlt"));
+          [
+            "title",
+            "tagline",
+            "pricePrimary",
+            "priceSecondary",
+            "priceNote",
+            "ctaLabel",
+          ].forEach(function (f) {
+            applyText(root, base + "." + f, get(data, base + "." + f));
+          });
+          applyHtml(root, base + ".descriptionHtml", get(data, base + ".descriptionHtml"));
+          applyBadge(root, base + ".badge");
         });
-        applyBadge(root, base + ".badge");
-      });
+      }
+
+      applyOfferingCards("individualCards");
+      applyOfferingCards("groupCards");
 
       [
         "footer.mission",

@@ -72,9 +72,10 @@
     "role": "Fertility Awareness Educator",
     "location": "Wolfville, Nova Scotia, Canada",
     "eyebrow": "Meet Your Guide",
-    "heading": "Empowerment through Body Literacy",
-    "bio1": "I’m Sophia, and I’m passionate about teaching Body Literacy as a tool for empowerment, safety, and liberation. I believe that learning the language of our bodies allows us to be in better relationship to ourselves and each other.",
-    "bio2": "My work is deeply informed by my previous life as a dance artist and Pilates teacher. I have tied my passion for social justice to my work through studies in international development, sustainability, and community development at Dalhousie and Acadia Universities.",
+    "heading": "Empowerment through Body Literacy.",
+    "bio1": "I’m Sophia Bush Anderson. I teach body literacy so that people can understand their cycles, health, and choices with more clarity and agency. Learning the language of our own bodies helps us be in better relationship to ourselves—and to one another.",
+    "bio2": "My teaching is still shaped by years as a dance artist and Pilates instructor, and by a commitment to justice that runs through my studies in international development, sustainability, and community development at Dalhousie and Acadia Universities.",
+    "trainingHtml": "<p>In 2023 I enrolled at <a href=\"https://www.justisse.ca/\">Justisse College International</a> in a two-year, master’s-level program to become a Holistic Reproductive Health Practitioner (HRHP) and a Fertility Awareness Educator (FAE). The training is rigorous and full-time, moving from the social and cultural history of contraception to reproductive endocrinology and physiology, and through to the foundations of holistic health. After a year of maternity leave, I am entering my supervised clinical practicum beginning April&nbsp;1.</p><p>You can <a href=\"https://www.justisse.ca/\">read more about Justisse College and its programs here</a>. I am also a member of the <a href=\"https://www.fertilityawarenessprofessionals.org/\">Association of Fertility Awareness Professionals (AFAP)</a>.</p>",
     "pullQuote": "This work is for anyone who wants their pregnancy, birth, and parenting to be consensual.",
     "values": [
       "Reproductive Justice",
@@ -122,40 +123,72 @@
   },
   "offeringsSection": {
     "heading": "Learning Journeys",
-    "intro": "From structured hybrid programs to intensive private coaching, each pathway is designed to move you toward mastery.",
-    "cards": [
+    "individualIntro": "Programs for people who want to learn charting for themselves—whether you thrive in a small group or prefer private coaching at your own pace.",
+    "groupIntro": "Workshops for schools, community organizations, and individuals who want Sophia to facilitate body literacy for their students, members, or groups.",
+    "individualCards": [
       {
         "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80",
-        "imageAlt": "Seed & Soil",
+        "imageAlt": "Small group learning",
         "badge": "Active Enrollment",
-        "title": "Seed & Soil Fertility",
-        "subtitle": "An 8-week hybrid journey: 2 group and 4 private sessions.",
-        "price": "$450",
-        "priceNote": "Split payments available",
+        "title": "Charting 101: Becoming Bodywise",
+        "tagline": "Two group sessions (2h each) plus four private sessions (1h each).",
+        "descriptionHtml": "<p>Come chart with us in a supportive small group. Over two sessions (two hours each), we build the basics of the method together. Then we move into four one-on-one sessions (one hour each), using <em>your</em> charts to strengthen observation, interpretation, and skill week by week.</p><p>Whatever your reproductive goals—whether you are <abbr title=\"Trying to conceive\">TTC</abbr> or <abbr title=\"Trying to avoid pregnancy\">TTA</abbr>—this is for you if you want a secular, evidence-based path toward agency, empowerment, and the freedom that comes from truly understanding your body.</p>",
+        "pricePrimary": "$450 total",
+        "priceSecondary": "$75 per session · 6 sessions",
+        "priceNote": "Pay in full, or reserve with a $50 deposit plus four monthly payments of $100.",
         "ctaLabel": "Register Now"
       },
       {
         "image": "https://images.unsplash.com/photo-1512438248408-28ff50863b1b?auto=format&fit=crop&w=400&q=80",
-        "imageAlt": "Charting for Health",
+        "imageAlt": "One-on-one coaching",
         "badge": "",
-        "title": "Charting for Health",
-        "subtitle": "6 intensive private sessions to establish your health baseline.",
-        "price": "$360",
-        "priceNote": "",
-        "ctaLabel": "Inquire"
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80",
-        "imageAlt": "Reproductive Sovereignty",
-        "badge": "",
-        "title": "Reproductive Sovereignty",
-        "subtitle": "8 private sessions focused on avoiding or achieving pregnancy.",
-        "price": "$480",
+        "title": "Private coaching package",
+        "tagline": "Eight one-on-one sessions tailored to your goals.",
+        "descriptionHtml": "<p>If a group program is not the right container, you can work through similar material in private coaching: charting for health, cycle literacy, reproductive sovereignty, and the practical habits that help your chart tell a clearer story.</p><p>This option fits especially well when you want more flexibility, room to move at your own pace, space to bring a partner, focused support through conception delays or health questions, or a private setting where you can go as deep as you need without an audience.</p>",
+        "pricePrimary": "$760 total",
+        "priceSecondary": "$95 per session · 8 sessions",
         "priceNote": "",
         "ctaLabel": "Inquire"
       }
     ],
-    "footerLine1": "Also offering: <strong>The Period Positivity Workshop</strong> | <strong>The Peri Prep Lab</strong>",
+    "groupCards": [
+      {
+        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Youth workshop",
+        "badge": "",
+        "title": "Period Positivity Workshop",
+        "tagline": "Youth ages 8–12 · one 3-hour workshop",
+        "descriptionHtml": "<p>A lively, educational body-literacy workshop for youth ages 8–12: participants build the knowledge and language they need to relate to their period and cycle with confidence, curiosity, and care.</p><p>The offering includes a three-hour facilitated session, all materials, and a take-home period pouch for each participant. Past partners include Family Resource Centres, Girl Guides, the Young Women’s Christian Association (YWCA), and the Town of Wolfville.</p>",
+        "pricePrimary": "$350–$500 per group",
+        "priceSecondary": "One 3-hour workshop · materials included",
+        "priceNote": "Take-home period pouch for every participant.",
+        "ctaLabel": "Book a workshop"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Perimenopause education",
+        "badge": "",
+        "title": "Perimenopause Unlocked",
+        "tagline": "Ages 35–55 · one 3-hour lab",
+        "descriptionHtml": "<p>This lab is built to demystify perimenopause and normalize what can feel like a lonely, confusing stretch. We cover hormonal and physiological patterns in plain language and translate that understanding into practical strategies for health, empowerment, and self-care.</p><p>The session is three hours and is intended for people who cycle, ages 35–55—whether you are starting to notice changes or already navigating a bumpier season and want grounded information you can use right away.</p>",
+        "pricePrimary": "$350–$500 per group",
+        "priceSecondary": "One 3-hour session",
+        "priceNote": "Final fee depends on group size and format; we confirm details together before you book.",
+        "ctaLabel": "Book a lab"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Community fertility awareness talk",
+        "badge": "",
+        "title": "Fertility Awareness 101",
+        "tagline": "Community talk · length flexible",
+        "descriptionHtml": "<p>Want to learn more about fertility awareness? Sophia can join your community for an accessible primer on what fertility awareness-based methods are, how they work in real bodies (not just in theory), and what charting with intention can offer.</p><p>There is time for honest questions, myth-checking, and conversation—and you will leave with curated resources so your group feels informed, oriented, and supported rather than overwhelmed.</p>",
+        "pricePrimary": "Pay what you can",
+        "priceSecondary": "We set a fair rate together for your organization or community.",
+        "priceNote": "",
+        "ctaLabel": "Invite Sophia"
+      }
+    ],
     "footerLine2": "* Full or partial trades available *"
   },
   "footer": {

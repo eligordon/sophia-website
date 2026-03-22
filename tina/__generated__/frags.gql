@@ -60,6 +60,7 @@ fragment HomeParts on Home {
     heading
     bio1
     bio2
+    trainingHtml
     pullQuote
     values
     valuesFooter
@@ -77,19 +78,34 @@ fragment HomeParts on Home {
   offeringsSection {
     __typename
     heading
-    intro
-    cards {
+    individualIntro
+    groupIntro
+    individualCards {
       __typename
       image
       imageAlt
       badge
       title
-      subtitle
-      price
+      tagline
+      descriptionHtml
+      pricePrimary
+      priceSecondary
       priceNote
       ctaLabel
     }
-    footerLine1
+    groupCards {
+      __typename
+      image
+      imageAlt
+      badge
+      title
+      tagline
+      descriptionHtml
+      pricePrimary
+      priceSecondary
+      priceNote
+      ctaLabel
+    }
     footerLine2
   }
   footer {

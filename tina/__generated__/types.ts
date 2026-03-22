@@ -232,6 +232,7 @@ export type HomeAbout = {
   heading?: Maybe<Scalars['String']['output']>;
   bio1?: Maybe<Scalars['String']['output']>;
   bio2?: Maybe<Scalars['String']['output']>;
+  trainingHtml?: Maybe<Scalars['String']['output']>;
   pullQuote?: Maybe<Scalars['String']['output']>;
   values?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   valuesFooter?: Maybe<Scalars['String']['output']>;
@@ -250,14 +251,30 @@ export type HomeFaqSection = {
   items?: Maybe<Array<Maybe<HomeFaqSectionItems>>>;
 };
 
-export type HomeOfferingsSectionCards = {
-  __typename?: 'HomeOfferingsSectionCards';
+export type HomeOfferingsSectionIndividualCards = {
+  __typename?: 'HomeOfferingsSectionIndividualCards';
   image?: Maybe<Scalars['String']['output']>;
   imageAlt?: Maybe<Scalars['String']['output']>;
   badge?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
-  subtitle?: Maybe<Scalars['String']['output']>;
-  price?: Maybe<Scalars['String']['output']>;
+  tagline?: Maybe<Scalars['String']['output']>;
+  descriptionHtml?: Maybe<Scalars['String']['output']>;
+  pricePrimary?: Maybe<Scalars['String']['output']>;
+  priceSecondary?: Maybe<Scalars['String']['output']>;
+  priceNote?: Maybe<Scalars['String']['output']>;
+  ctaLabel?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeOfferingsSectionGroupCards = {
+  __typename?: 'HomeOfferingsSectionGroupCards';
+  image?: Maybe<Scalars['String']['output']>;
+  imageAlt?: Maybe<Scalars['String']['output']>;
+  badge?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  tagline?: Maybe<Scalars['String']['output']>;
+  descriptionHtml?: Maybe<Scalars['String']['output']>;
+  pricePrimary?: Maybe<Scalars['String']['output']>;
+  priceSecondary?: Maybe<Scalars['String']['output']>;
   priceNote?: Maybe<Scalars['String']['output']>;
   ctaLabel?: Maybe<Scalars['String']['output']>;
 };
@@ -265,9 +282,10 @@ export type HomeOfferingsSectionCards = {
 export type HomeOfferingsSection = {
   __typename?: 'HomeOfferingsSection';
   heading?: Maybe<Scalars['String']['output']>;
-  intro?: Maybe<Scalars['String']['output']>;
-  cards?: Maybe<Array<Maybe<HomeOfferingsSectionCards>>>;
-  footerLine1?: Maybe<Scalars['String']['output']>;
+  individualIntro?: Maybe<Scalars['String']['output']>;
+  groupIntro?: Maybe<Scalars['String']['output']>;
+  individualCards?: Maybe<Array<Maybe<HomeOfferingsSectionIndividualCards>>>;
+  groupCards?: Maybe<Array<Maybe<HomeOfferingsSectionGroupCards>>>;
   footerLine2?: Maybe<Scalars['String']['output']>;
 };
 
@@ -365,6 +383,7 @@ export type HomeAboutFilter = {
   heading?: InputMaybe<StringFilter>;
   bio1?: InputMaybe<StringFilter>;
   bio2?: InputMaybe<StringFilter>;
+  trainingHtml?: InputMaybe<StringFilter>;
   pullQuote?: InputMaybe<StringFilter>;
   values?: InputMaybe<StringFilter>;
   valuesFooter?: InputMaybe<StringFilter>;
@@ -381,22 +400,38 @@ export type HomeFaqSectionFilter = {
   items?: InputMaybe<HomeFaqSectionItemsFilter>;
 };
 
-export type HomeOfferingsSectionCardsFilter = {
+export type HomeOfferingsSectionIndividualCardsFilter = {
   image?: InputMaybe<StringFilter>;
   imageAlt?: InputMaybe<StringFilter>;
   badge?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  price?: InputMaybe<StringFilter>;
+  tagline?: InputMaybe<StringFilter>;
+  descriptionHtml?: InputMaybe<StringFilter>;
+  pricePrimary?: InputMaybe<StringFilter>;
+  priceSecondary?: InputMaybe<StringFilter>;
+  priceNote?: InputMaybe<StringFilter>;
+  ctaLabel?: InputMaybe<StringFilter>;
+};
+
+export type HomeOfferingsSectionGroupCardsFilter = {
+  image?: InputMaybe<StringFilter>;
+  imageAlt?: InputMaybe<StringFilter>;
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  tagline?: InputMaybe<StringFilter>;
+  descriptionHtml?: InputMaybe<StringFilter>;
+  pricePrimary?: InputMaybe<StringFilter>;
+  priceSecondary?: InputMaybe<StringFilter>;
   priceNote?: InputMaybe<StringFilter>;
   ctaLabel?: InputMaybe<StringFilter>;
 };
 
 export type HomeOfferingsSectionFilter = {
   heading?: InputMaybe<StringFilter>;
-  intro?: InputMaybe<StringFilter>;
-  cards?: InputMaybe<HomeOfferingsSectionCardsFilter>;
-  footerLine1?: InputMaybe<StringFilter>;
+  individualIntro?: InputMaybe<StringFilter>;
+  groupIntro?: InputMaybe<StringFilter>;
+  individualCards?: InputMaybe<HomeOfferingsSectionIndividualCardsFilter>;
+  groupCards?: InputMaybe<HomeOfferingsSectionGroupCardsFilter>;
   footerLine2?: InputMaybe<StringFilter>;
 };
 
@@ -560,6 +595,7 @@ export type HomeAboutMutation = {
   heading?: InputMaybe<Scalars['String']['input']>;
   bio1?: InputMaybe<Scalars['String']['input']>;
   bio2?: InputMaybe<Scalars['String']['input']>;
+  trainingHtml?: InputMaybe<Scalars['String']['input']>;
   pullQuote?: InputMaybe<Scalars['String']['input']>;
   values?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   valuesFooter?: InputMaybe<Scalars['String']['input']>;
@@ -576,22 +612,38 @@ export type HomeFaqSectionMutation = {
   items?: InputMaybe<Array<InputMaybe<HomeFaqSectionItemsMutation>>>;
 };
 
-export type HomeOfferingsSectionCardsMutation = {
+export type HomeOfferingsSectionIndividualCardsMutation = {
   image?: InputMaybe<Scalars['String']['input']>;
   imageAlt?: InputMaybe<Scalars['String']['input']>;
   badge?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  subtitle?: InputMaybe<Scalars['String']['input']>;
-  price?: InputMaybe<Scalars['String']['input']>;
+  tagline?: InputMaybe<Scalars['String']['input']>;
+  descriptionHtml?: InputMaybe<Scalars['String']['input']>;
+  pricePrimary?: InputMaybe<Scalars['String']['input']>;
+  priceSecondary?: InputMaybe<Scalars['String']['input']>;
+  priceNote?: InputMaybe<Scalars['String']['input']>;
+  ctaLabel?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeOfferingsSectionGroupCardsMutation = {
+  image?: InputMaybe<Scalars['String']['input']>;
+  imageAlt?: InputMaybe<Scalars['String']['input']>;
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  tagline?: InputMaybe<Scalars['String']['input']>;
+  descriptionHtml?: InputMaybe<Scalars['String']['input']>;
+  pricePrimary?: InputMaybe<Scalars['String']['input']>;
+  priceSecondary?: InputMaybe<Scalars['String']['input']>;
   priceNote?: InputMaybe<Scalars['String']['input']>;
   ctaLabel?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type HomeOfferingsSectionMutation = {
   heading?: InputMaybe<Scalars['String']['input']>;
-  intro?: InputMaybe<Scalars['String']['input']>;
-  cards?: InputMaybe<Array<InputMaybe<HomeOfferingsSectionCardsMutation>>>;
-  footerLine1?: InputMaybe<Scalars['String']['input']>;
+  individualIntro?: InputMaybe<Scalars['String']['input']>;
+  groupIntro?: InputMaybe<Scalars['String']['input']>;
+  individualCards?: InputMaybe<Array<InputMaybe<HomeOfferingsSectionIndividualCardsMutation>>>;
+  groupCards?: InputMaybe<Array<InputMaybe<HomeOfferingsSectionGroupCardsMutation>>>;
   footerLine2?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -617,14 +669,14 @@ export type HomeMutation = {
   footer?: InputMaybe<HomeFooterMutation>;
 };
 
-export type HomePartsFragment = { __typename: 'Home', seo?: { __typename: 'HomeSeo', title?: string | null, description?: string | null } | null, navigation?: { __typename: 'HomeNavigation', wisdom?: string | null, pathways?: string | null, sophia?: string | null, faq?: string | null, getStarted?: string | null, mobileOfferings?: string | null } | null, hero?: { __typename: 'HomeHero', eyebrow?: string | null, headline?: string | null, paragraph1?: string | null, paragraph2?: string | null, primaryCta?: string | null, secondaryCta?: string | null, image?: string | null, imageAlt?: string | null } | null, wisdom?: { __typename: 'HomeWisdom', image?: string | null, imageAlt?: string | null, eyebrow?: string | null, heading?: string | null, body1Html?: string | null, body2?: string | null, quote?: string | null, quoteAttribution?: string | null } | null, pathwaysSection?: { __typename: 'HomePathwaysSection', heading?: string | null, intro?: string | null, pathways?: Array<{ __typename: 'HomePathwaysSectionPathways', image?: string | null, imageAlt?: string | null, tag?: string | null, title?: string | null, description?: string | null } | null> | null } | null, about?: { __typename: 'HomeAbout', profileImage?: string | null, profileImageAlt?: string | null, name?: string | null, role?: string | null, location?: string | null, eyebrow?: string | null, heading?: string | null, bio1?: string | null, bio2?: string | null, pullQuote?: string | null, values?: Array<string | null> | null, valuesFooter?: string | null } | null, faqSection?: { __typename: 'HomeFaqSection', heading?: string | null, intro?: string | null, items?: Array<{ __typename: 'HomeFaqSectionItems', question?: string | null, answerHtml?: string | null } | null> | null } | null, offeringsSection?: { __typename: 'HomeOfferingsSection', heading?: string | null, intro?: string | null, footerLine1?: string | null, footerLine2?: string | null, cards?: Array<{ __typename: 'HomeOfferingsSectionCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, subtitle?: string | null, price?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null } | null, footer?: { __typename: 'HomeFooter', mission?: string | null, location?: string | null, locationSub?: string | null, ctaHeadline?: string | null, ctaButton?: string | null, copyrightAfterYear?: string | null, tagline?: string | null } | null };
+export type HomePartsFragment = { __typename: 'Home', seo?: { __typename: 'HomeSeo', title?: string | null, description?: string | null } | null, navigation?: { __typename: 'HomeNavigation', wisdom?: string | null, pathways?: string | null, sophia?: string | null, faq?: string | null, getStarted?: string | null, mobileOfferings?: string | null } | null, hero?: { __typename: 'HomeHero', eyebrow?: string | null, headline?: string | null, paragraph1?: string | null, paragraph2?: string | null, primaryCta?: string | null, secondaryCta?: string | null, image?: string | null, imageAlt?: string | null } | null, wisdom?: { __typename: 'HomeWisdom', image?: string | null, imageAlt?: string | null, eyebrow?: string | null, heading?: string | null, body1Html?: string | null, body2?: string | null, quote?: string | null, quoteAttribution?: string | null } | null, pathwaysSection?: { __typename: 'HomePathwaysSection', heading?: string | null, intro?: string | null, pathways?: Array<{ __typename: 'HomePathwaysSectionPathways', image?: string | null, imageAlt?: string | null, tag?: string | null, title?: string | null, description?: string | null } | null> | null } | null, about?: { __typename: 'HomeAbout', profileImage?: string | null, profileImageAlt?: string | null, name?: string | null, role?: string | null, location?: string | null, eyebrow?: string | null, heading?: string | null, bio1?: string | null, bio2?: string | null, trainingHtml?: string | null, pullQuote?: string | null, values?: Array<string | null> | null, valuesFooter?: string | null } | null, faqSection?: { __typename: 'HomeFaqSection', heading?: string | null, intro?: string | null, items?: Array<{ __typename: 'HomeFaqSectionItems', question?: string | null, answerHtml?: string | null } | null> | null } | null, offeringsSection?: { __typename: 'HomeOfferingsSection', heading?: string | null, individualIntro?: string | null, groupIntro?: string | null, footerLine2?: string | null, individualCards?: Array<{ __typename: 'HomeOfferingsSectionIndividualCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, tagline?: string | null, descriptionHtml?: string | null, pricePrimary?: string | null, priceSecondary?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null, groupCards?: Array<{ __typename: 'HomeOfferingsSectionGroupCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, tagline?: string | null, descriptionHtml?: string | null, pricePrimary?: string | null, priceSecondary?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null } | null, footer?: { __typename: 'HomeFooter', mission?: string | null, location?: string | null, locationSub?: string | null, ctaHeadline?: string | null, ctaButton?: string | null, copyrightAfterYear?: string | null, tagline?: string | null } | null };
 
 export type HomeQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type HomeQuery = { __typename?: 'Query', home: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'HomeSeo', title?: string | null, description?: string | null } | null, navigation?: { __typename: 'HomeNavigation', wisdom?: string | null, pathways?: string | null, sophia?: string | null, faq?: string | null, getStarted?: string | null, mobileOfferings?: string | null } | null, hero?: { __typename: 'HomeHero', eyebrow?: string | null, headline?: string | null, paragraph1?: string | null, paragraph2?: string | null, primaryCta?: string | null, secondaryCta?: string | null, image?: string | null, imageAlt?: string | null } | null, wisdom?: { __typename: 'HomeWisdom', image?: string | null, imageAlt?: string | null, eyebrow?: string | null, heading?: string | null, body1Html?: string | null, body2?: string | null, quote?: string | null, quoteAttribution?: string | null } | null, pathwaysSection?: { __typename: 'HomePathwaysSection', heading?: string | null, intro?: string | null, pathways?: Array<{ __typename: 'HomePathwaysSectionPathways', image?: string | null, imageAlt?: string | null, tag?: string | null, title?: string | null, description?: string | null } | null> | null } | null, about?: { __typename: 'HomeAbout', profileImage?: string | null, profileImageAlt?: string | null, name?: string | null, role?: string | null, location?: string | null, eyebrow?: string | null, heading?: string | null, bio1?: string | null, bio2?: string | null, pullQuote?: string | null, values?: Array<string | null> | null, valuesFooter?: string | null } | null, faqSection?: { __typename: 'HomeFaqSection', heading?: string | null, intro?: string | null, items?: Array<{ __typename: 'HomeFaqSectionItems', question?: string | null, answerHtml?: string | null } | null> | null } | null, offeringsSection?: { __typename: 'HomeOfferingsSection', heading?: string | null, intro?: string | null, footerLine1?: string | null, footerLine2?: string | null, cards?: Array<{ __typename: 'HomeOfferingsSectionCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, subtitle?: string | null, price?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null } | null, footer?: { __typename: 'HomeFooter', mission?: string | null, location?: string | null, locationSub?: string | null, ctaHeadline?: string | null, ctaButton?: string | null, copyrightAfterYear?: string | null, tagline?: string | null } | null } };
+export type HomeQuery = { __typename?: 'Query', home: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'HomeSeo', title?: string | null, description?: string | null } | null, navigation?: { __typename: 'HomeNavigation', wisdom?: string | null, pathways?: string | null, sophia?: string | null, faq?: string | null, getStarted?: string | null, mobileOfferings?: string | null } | null, hero?: { __typename: 'HomeHero', eyebrow?: string | null, headline?: string | null, paragraph1?: string | null, paragraph2?: string | null, primaryCta?: string | null, secondaryCta?: string | null, image?: string | null, imageAlt?: string | null } | null, wisdom?: { __typename: 'HomeWisdom', image?: string | null, imageAlt?: string | null, eyebrow?: string | null, heading?: string | null, body1Html?: string | null, body2?: string | null, quote?: string | null, quoteAttribution?: string | null } | null, pathwaysSection?: { __typename: 'HomePathwaysSection', heading?: string | null, intro?: string | null, pathways?: Array<{ __typename: 'HomePathwaysSectionPathways', image?: string | null, imageAlt?: string | null, tag?: string | null, title?: string | null, description?: string | null } | null> | null } | null, about?: { __typename: 'HomeAbout', profileImage?: string | null, profileImageAlt?: string | null, name?: string | null, role?: string | null, location?: string | null, eyebrow?: string | null, heading?: string | null, bio1?: string | null, bio2?: string | null, trainingHtml?: string | null, pullQuote?: string | null, values?: Array<string | null> | null, valuesFooter?: string | null } | null, faqSection?: { __typename: 'HomeFaqSection', heading?: string | null, intro?: string | null, items?: Array<{ __typename: 'HomeFaqSectionItems', question?: string | null, answerHtml?: string | null } | null> | null } | null, offeringsSection?: { __typename: 'HomeOfferingsSection', heading?: string | null, individualIntro?: string | null, groupIntro?: string | null, footerLine2?: string | null, individualCards?: Array<{ __typename: 'HomeOfferingsSectionIndividualCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, tagline?: string | null, descriptionHtml?: string | null, pricePrimary?: string | null, priceSecondary?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null, groupCards?: Array<{ __typename: 'HomeOfferingsSectionGroupCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, tagline?: string | null, descriptionHtml?: string | null, pricePrimary?: string | null, priceSecondary?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null } | null, footer?: { __typename: 'HomeFooter', mission?: string | null, location?: string | null, locationSub?: string | null, ctaHeadline?: string | null, ctaButton?: string | null, copyrightAfterYear?: string | null, tagline?: string | null } | null } };
 
 export type HomeConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -636,7 +688,7 @@ export type HomeConnectionQueryVariables = Exact<{
 }>;
 
 
-export type HomeConnectionQuery = { __typename?: 'Query', homeConnection: { __typename?: 'HomeConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeConnectionEdges', cursor: string, node?: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'HomeSeo', title?: string | null, description?: string | null } | null, navigation?: { __typename: 'HomeNavigation', wisdom?: string | null, pathways?: string | null, sophia?: string | null, faq?: string | null, getStarted?: string | null, mobileOfferings?: string | null } | null, hero?: { __typename: 'HomeHero', eyebrow?: string | null, headline?: string | null, paragraph1?: string | null, paragraph2?: string | null, primaryCta?: string | null, secondaryCta?: string | null, image?: string | null, imageAlt?: string | null } | null, wisdom?: { __typename: 'HomeWisdom', image?: string | null, imageAlt?: string | null, eyebrow?: string | null, heading?: string | null, body1Html?: string | null, body2?: string | null, quote?: string | null, quoteAttribution?: string | null } | null, pathwaysSection?: { __typename: 'HomePathwaysSection', heading?: string | null, intro?: string | null, pathways?: Array<{ __typename: 'HomePathwaysSectionPathways', image?: string | null, imageAlt?: string | null, tag?: string | null, title?: string | null, description?: string | null } | null> | null } | null, about?: { __typename: 'HomeAbout', profileImage?: string | null, profileImageAlt?: string | null, name?: string | null, role?: string | null, location?: string | null, eyebrow?: string | null, heading?: string | null, bio1?: string | null, bio2?: string | null, pullQuote?: string | null, values?: Array<string | null> | null, valuesFooter?: string | null } | null, faqSection?: { __typename: 'HomeFaqSection', heading?: string | null, intro?: string | null, items?: Array<{ __typename: 'HomeFaqSectionItems', question?: string | null, answerHtml?: string | null } | null> | null } | null, offeringsSection?: { __typename: 'HomeOfferingsSection', heading?: string | null, intro?: string | null, footerLine1?: string | null, footerLine2?: string | null, cards?: Array<{ __typename: 'HomeOfferingsSectionCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, subtitle?: string | null, price?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null } | null, footer?: { __typename: 'HomeFooter', mission?: string | null, location?: string | null, locationSub?: string | null, ctaHeadline?: string | null, ctaButton?: string | null, copyrightAfterYear?: string | null, tagline?: string | null } | null } | null } | null> | null } };
+export type HomeConnectionQuery = { __typename?: 'Query', homeConnection: { __typename?: 'HomeConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeConnectionEdges', cursor: string, node?: { __typename: 'Home', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'HomeSeo', title?: string | null, description?: string | null } | null, navigation?: { __typename: 'HomeNavigation', wisdom?: string | null, pathways?: string | null, sophia?: string | null, faq?: string | null, getStarted?: string | null, mobileOfferings?: string | null } | null, hero?: { __typename: 'HomeHero', eyebrow?: string | null, headline?: string | null, paragraph1?: string | null, paragraph2?: string | null, primaryCta?: string | null, secondaryCta?: string | null, image?: string | null, imageAlt?: string | null } | null, wisdom?: { __typename: 'HomeWisdom', image?: string | null, imageAlt?: string | null, eyebrow?: string | null, heading?: string | null, body1Html?: string | null, body2?: string | null, quote?: string | null, quoteAttribution?: string | null } | null, pathwaysSection?: { __typename: 'HomePathwaysSection', heading?: string | null, intro?: string | null, pathways?: Array<{ __typename: 'HomePathwaysSectionPathways', image?: string | null, imageAlt?: string | null, tag?: string | null, title?: string | null, description?: string | null } | null> | null } | null, about?: { __typename: 'HomeAbout', profileImage?: string | null, profileImageAlt?: string | null, name?: string | null, role?: string | null, location?: string | null, eyebrow?: string | null, heading?: string | null, bio1?: string | null, bio2?: string | null, trainingHtml?: string | null, pullQuote?: string | null, values?: Array<string | null> | null, valuesFooter?: string | null } | null, faqSection?: { __typename: 'HomeFaqSection', heading?: string | null, intro?: string | null, items?: Array<{ __typename: 'HomeFaqSectionItems', question?: string | null, answerHtml?: string | null } | null> | null } | null, offeringsSection?: { __typename: 'HomeOfferingsSection', heading?: string | null, individualIntro?: string | null, groupIntro?: string | null, footerLine2?: string | null, individualCards?: Array<{ __typename: 'HomeOfferingsSectionIndividualCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, tagline?: string | null, descriptionHtml?: string | null, pricePrimary?: string | null, priceSecondary?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null, groupCards?: Array<{ __typename: 'HomeOfferingsSectionGroupCards', image?: string | null, imageAlt?: string | null, badge?: string | null, title?: string | null, tagline?: string | null, descriptionHtml?: string | null, pricePrimary?: string | null, priceSecondary?: string | null, priceNote?: string | null, ctaLabel?: string | null } | null> | null } | null, footer?: { __typename: 'HomeFooter', mission?: string | null, location?: string | null, locationSub?: string | null, ctaHeadline?: string | null, ctaButton?: string | null, copyrightAfterYear?: string | null, tagline?: string | null } | null } | null } | null> | null } };
 
 export const HomePartsFragmentDoc = gql`
     fragment HomeParts on Home {
@@ -701,6 +753,7 @@ export const HomePartsFragmentDoc = gql`
     heading
     bio1
     bio2
+    trainingHtml
     pullQuote
     values
     valuesFooter
@@ -718,19 +771,34 @@ export const HomePartsFragmentDoc = gql`
   offeringsSection {
     __typename
     heading
-    intro
-    cards {
+    individualIntro
+    groupIntro
+    individualCards {
       __typename
       image
       imageAlt
       badge
       title
-      subtitle
-      price
+      tagline
+      descriptionHtml
+      pricePrimary
+      priceSecondary
       priceNote
       ctaLabel
     }
-    footerLine1
+    groupCards {
+      __typename
+      image
+      imageAlt
+      badge
+      title
+      tagline
+      descriptionHtml
+      pricePrimary
+      priceSecondary
+      priceNote
+      ctaLabel
+    }
     footerLine2
   }
   footer {

@@ -147,6 +147,7 @@ type HomeAbout {
   heading: String
   bio1: String
   bio2: String
+  trainingHtml: String
   pullQuote: String
   values: [String]
   valuesFooter: String
@@ -163,22 +164,38 @@ type HomeFaqSection {
   items: [HomeFaqSectionItems]
 }
 
-type HomeOfferingsSectionCards {
+type HomeOfferingsSectionIndividualCards {
   image: String
   imageAlt: String
   badge: String
   title: String
-  subtitle: String
-  price: String
+  tagline: String
+  descriptionHtml: String
+  pricePrimary: String
+  priceSecondary: String
+  priceNote: String
+  ctaLabel: String
+}
+
+type HomeOfferingsSectionGroupCards {
+  image: String
+  imageAlt: String
+  badge: String
+  title: String
+  tagline: String
+  descriptionHtml: String
+  pricePrimary: String
+  priceSecondary: String
   priceNote: String
   ctaLabel: String
 }
 
 type HomeOfferingsSection {
   heading: String
-  intro: String
-  cards: [HomeOfferingsSectionCards]
-  footerLine1: String
+  individualIntro: String
+  groupIntro: String
+  individualCards: [HomeOfferingsSectionIndividualCards]
+  groupCards: [HomeOfferingsSectionGroupCards]
   footerLine2: String
 }
 
@@ -274,6 +291,7 @@ input HomeAboutFilter {
   heading: StringFilter
   bio1: StringFilter
   bio2: StringFilter
+  trainingHtml: StringFilter
   pullQuote: StringFilter
   values: StringFilter
   valuesFooter: StringFilter
@@ -290,22 +308,38 @@ input HomeFaqSectionFilter {
   items: HomeFaqSectionItemsFilter
 }
 
-input HomeOfferingsSectionCardsFilter {
+input HomeOfferingsSectionIndividualCardsFilter {
   image: StringFilter
   imageAlt: StringFilter
   badge: StringFilter
   title: StringFilter
-  subtitle: StringFilter
-  price: StringFilter
+  tagline: StringFilter
+  descriptionHtml: StringFilter
+  pricePrimary: StringFilter
+  priceSecondary: StringFilter
+  priceNote: StringFilter
+  ctaLabel: StringFilter
+}
+
+input HomeOfferingsSectionGroupCardsFilter {
+  image: StringFilter
+  imageAlt: StringFilter
+  badge: StringFilter
+  title: StringFilter
+  tagline: StringFilter
+  descriptionHtml: StringFilter
+  pricePrimary: StringFilter
+  priceSecondary: StringFilter
   priceNote: StringFilter
   ctaLabel: StringFilter
 }
 
 input HomeOfferingsSectionFilter {
   heading: StringFilter
-  intro: StringFilter
-  cards: HomeOfferingsSectionCardsFilter
-  footerLine1: StringFilter
+  individualIntro: StringFilter
+  groupIntro: StringFilter
+  individualCards: HomeOfferingsSectionIndividualCardsFilter
+  groupCards: HomeOfferingsSectionGroupCardsFilter
   footerLine2: StringFilter
 }
 
@@ -421,6 +455,7 @@ input HomeAboutMutation {
   heading: String
   bio1: String
   bio2: String
+  trainingHtml: String
   pullQuote: String
   values: [String]
   valuesFooter: String
@@ -437,22 +472,38 @@ input HomeFaqSectionMutation {
   items: [HomeFaqSectionItemsMutation]
 }
 
-input HomeOfferingsSectionCardsMutation {
+input HomeOfferingsSectionIndividualCardsMutation {
   image: String
   imageAlt: String
   badge: String
   title: String
-  subtitle: String
-  price: String
+  tagline: String
+  descriptionHtml: String
+  pricePrimary: String
+  priceSecondary: String
+  priceNote: String
+  ctaLabel: String
+}
+
+input HomeOfferingsSectionGroupCardsMutation {
+  image: String
+  imageAlt: String
+  badge: String
+  title: String
+  tagline: String
+  descriptionHtml: String
+  pricePrimary: String
+  priceSecondary: String
   priceNote: String
   ctaLabel: String
 }
 
 input HomeOfferingsSectionMutation {
   heading: String
-  intro: String
-  cards: [HomeOfferingsSectionCardsMutation]
-  footerLine1: String
+  individualIntro: String
+  groupIntro: String
+  individualCards: [HomeOfferingsSectionIndividualCardsMutation]
+  groupCards: [HomeOfferingsSectionGroupCardsMutation]
   footerLine2: String
 }
 

@@ -188,6 +188,12 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
+                name: "trainingHtml",
+                label: "Training & credentials (HTML)",
+                ui: { component: "textarea" }
+              },
+              {
+                type: "string",
                 name: "pullQuote",
                 label: "Pull quote",
                 ui: { component: "textarea" }
@@ -243,14 +249,20 @@ var config_default = defineConfig({
               { type: "string", name: "heading", label: "Heading" },
               {
                 type: "string",
-                name: "intro",
-                label: "Intro",
+                name: "individualIntro",
+                label: "Intro (individuals)",
+                ui: { component: "textarea" }
+              },
+              {
+                type: "string",
+                name: "groupIntro",
+                label: "Intro (organizations & groups)",
                 ui: { component: "textarea" }
               },
               {
                 type: "object",
-                name: "cards",
-                label: "Offering cards",
+                name: "individualCards",
+                label: "Individual offerings",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -268,11 +280,67 @@ var config_default = defineConfig({
                   { type: "string", name: "title", label: "Title" },
                   {
                     type: "string",
-                    name: "subtitle",
-                    label: "Subtitle",
+                    name: "tagline",
+                    label: "Tagline",
                     ui: { component: "textarea" }
                   },
-                  { type: "string", name: "price", label: "Price line" },
+                  {
+                    type: "string",
+                    name: "descriptionHtml",
+                    label: "Description (HTML)",
+                    ui: { component: "textarea" }
+                  },
+                  { type: "string", name: "pricePrimary", label: "Price (primary line)" },
+                  {
+                    type: "string",
+                    name: "priceSecondary",
+                    label: "Price (secondary line, optional)"
+                  },
+                  {
+                    type: "string",
+                    name: "priceNote",
+                    label: "Price note / payment plan (optional)"
+                  },
+                  { type: "string", name: "ctaLabel", label: "Button label" }
+                ]
+              },
+              {
+                type: "object",
+                name: "groupCards",
+                label: "Group & workshop offerings",
+                list: true,
+                ui: {
+                  itemProps: (item) => ({
+                    label: item?.title || "Offering"
+                  })
+                },
+                fields: [
+                  { type: "string", name: "image", label: "Image URL" },
+                  { type: "string", name: "imageAlt", label: "Image alt" },
+                  {
+                    type: "string",
+                    name: "badge",
+                    label: "Badge (optional)"
+                  },
+                  { type: "string", name: "title", label: "Title" },
+                  {
+                    type: "string",
+                    name: "tagline",
+                    label: "Tagline",
+                    ui: { component: "textarea" }
+                  },
+                  {
+                    type: "string",
+                    name: "descriptionHtml",
+                    label: "Description (HTML)",
+                    ui: { component: "textarea" }
+                  },
+                  { type: "string", name: "pricePrimary", label: "Price (primary line)" },
+                  {
+                    type: "string",
+                    name: "priceSecondary",
+                    label: "Price (secondary line, optional)"
+                  },
                   {
                     type: "string",
                     name: "priceNote",
@@ -280,12 +348,6 @@ var config_default = defineConfig({
                   },
                   { type: "string", name: "ctaLabel", label: "Button label" }
                 ]
-              },
-              {
-                type: "string",
-                name: "footerLine1",
-                label: "Footer line (workshops)",
-                ui: { component: "textarea" }
               },
               { type: "string", name: "footerLine2", label: "Footer line (trades)" }
             ]
