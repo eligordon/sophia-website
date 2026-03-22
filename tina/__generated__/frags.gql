@@ -1,0 +1,105 @@
+fragment HomeParts on Home {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  navigation {
+    __typename
+    wisdom
+    pathways
+    sophia
+    faq
+    getStarted
+    mobileOfferings
+  }
+  hero {
+    __typename
+    eyebrow
+    headline
+    paragraph1
+    paragraph2
+    primaryCta
+    secondaryCta
+    image
+    imageAlt
+  }
+  wisdom {
+    __typename
+    image
+    imageAlt
+    eyebrow
+    heading
+    body1Html
+    body2
+    quote
+    quoteAttribution
+  }
+  pathwaysSection {
+    __typename
+    heading
+    intro
+    pathways {
+      __typename
+      image
+      imageAlt
+      tag
+      title
+      description
+    }
+  }
+  about {
+    __typename
+    profileImage
+    profileImageAlt
+    name
+    role
+    location
+    eyebrow
+    heading
+    bio1
+    bio2
+    pullQuote
+    values
+    valuesFooter
+  }
+  faqSection {
+    __typename
+    heading
+    intro
+    items {
+      __typename
+      question
+      answerHtml
+    }
+  }
+  offeringsSection {
+    __typename
+    heading
+    intro
+    cards {
+      __typename
+      image
+      imageAlt
+      badge
+      title
+      subtitle
+      price
+      priceNote
+      ctaLabel
+    }
+    footerLine1
+    footerLine2
+  }
+  footer {
+    __typename
+    mission
+    location
+    locationSub
+    ctaHeadline
+    ctaButton
+    copyrightAfterYear
+    tagline
+  }
+}

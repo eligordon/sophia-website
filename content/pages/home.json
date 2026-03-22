@@ -1,0 +1,170 @@
+{
+  "seo": {
+    "title": "Full Cycle Health | Sophia Bush Anderson | Wolfville, NS",
+    "description": "Full Cycle Health offers evidence-based fertility awareness education and menstrual cycle charting with Sophia Bush Anderson in Wolfville, Nova Scotia and online. Private coaching and small-group programs."
+  },
+  "navigation": {
+    "wisdom": "Wisdom",
+    "pathways": "Pathways",
+    "sophia": "Sophia",
+    "faq": "FAQ",
+    "getStarted": "Get started",
+    "mobileOfferings": "Explore offerings"
+  },
+  "hero": {
+    "eyebrow": "Full Cycle Health · Fertility awareness education",
+    "headline": "Body literacy for every body.",
+    "paragraph1": "We teach evidence-based menstrual cycle charting through private coaching and small-group programs—so you can read your fertile signs, care for your health, and make informed choices about contraception, conception, and perimenopause.",
+    "paragraph2": "Led by fertility awareness educator Sophia Bush Anderson, in person in Wolfville, Nova Scotia and online. From your first period through midlife transitions—including coming off hormonal birth control—you build real skill, not guesswork.",
+    "primaryCta": "Explore offerings",
+    "secondaryCta": "Get in touch",
+    "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80",
+    "imageAlt": "Body awareness and reflection"
+  },
+  "wisdom": {
+    "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
+    "imageAlt": "Mindfulness and body wisdom",
+    "eyebrow": "The Vision",
+    "heading": "Your body has its own individual ecology.",
+    "body1Html": "This approach invites you to become the expert on your own experience. By exploring the terrain of your body—its boundaries, patterns, and points of change—you begin to understand what is normal for <em>you</em>.",
+    "body2": "With this data, you can recognize the patterns of each season and spot the signs of dis-ease. This is about deep self-understanding and true agency.",
+    "quote": "“There is no reason why women shouldn’t have as much information about their bodies as physicians do.”",
+    "quoteAttribution": "Dr. Jane Patterson, M.D."
+  },
+  "pathwaysSection": {
+    "heading": "Where are you in your journey?",
+    "intro": "Different seasons of life require different maps. Whether you are navigating health transitions or seeking reproductive autonomy, we provide the framework to navigate your cycle with confidence.",
+    "pathways": [
+      {
+        "image": "https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Autonomy",
+        "tag": "Autonomy",
+        "title": "Breaking up with the Pill",
+        "description": "Move beyond \"shutting down\" your system. Gain the tools to understand your actual risks and make informed reproductive choices."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Sovereignty",
+        "tag": "Sovereignty",
+        "title": "Mastering your cycle",
+        "description": "Stop guessing and start knowing. Gain an evidence-based system for deep self-understanding and sexual empowerment."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Transition",
+        "tag": "Transition",
+        "title": "Navigating Perimenopause",
+        "description": "Shaky ground becomes stable through observation. Charting helps identify where you are in the journey and empowers you to manage shifts."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Fertility",
+        "tag": "Fertility",
+        "title": "Conscious Conception",
+        "description": "Your cycle is a health report card. Use diagnostic charting to restore your terrain and understand your specific window of opportunity."
+      }
+    ]
+  },
+  "about": {
+    "profileImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=100",
+    "profileImageAlt": "Sophia Bush Anderson",
+    "name": "Sophia Bush Anderson",
+    "role": "Fertility Awareness Educator",
+    "location": "Wolfville, Nova Scotia, Canada",
+    "eyebrow": "Meet Your Guide",
+    "heading": "Empowerment through Body Literacy.",
+    "bio1": "I’m Sophia, and I’m passionate about teaching Body Literacy as a tool for empowerment, safety, and liberation. I believe that learning the language of our bodies allows us to be in better relationship to ourselves and each other.",
+    "bio2": "My work is deeply informed by my previous life as a dance artist and Pilates teacher. I have tied my passion for social justice to my work through studies in international development, sustainability, and community development at Dalhousie and Acadia Universities.",
+    "pullQuote": "This work is for anyone who wants their pregnancy, birth, and parenting to be consensual.",
+    "values": [
+      "Reproductive Justice",
+      "Intersectional Feminism",
+      "Body Ecology",
+      "Consent-Based Care",
+      "Sex Positive",
+      "Healing Justice"
+    ],
+    "valuesFooter": "Based in Wolfville, Nova Scotia, Full Cycle Health serves clients locally and online, providing a holistic view of the cycle as a vital part of personal ecology."
+  },
+  "faqSection": {
+    "heading": "Common Questions",
+    "intro": "Clarifications on the method and how we work together.",
+    "items": [
+      {
+        "question": "How will we meet?",
+        "answerHtml": "<p>We offer flexible meeting options to fit your life. Sessions are available both <strong>online</strong> via secure video conferencing or <strong>in person</strong> at our local practice space in <strong>Wolfville, Nova Scotia, Canada</strong>.</p>"
+      },
+      {
+        "question": "How do I know this is for me?",
+        "answerHtml": "<p>Ask yourself: Do you want to learn more about your body? Do you want to know how to prevent pregnancy effectively with just your own detective skills? Do you want to avoid hormonal disruptors or achieve pregnancy more quickly? If you want to improve your menstrual health or understand the seasons of your cycle, you're in the right place.</p>"
+      },
+      {
+        "question": "What's involved in the learning process?",
+        "answerHtml": "<p>We go deep into reproductive anatomy, the mechanisms of the menstrual cycle, and primary signs of fertility. You'll learn to observe these in your body daily and chart them according to the Justisse Method. This may also involve lifestyle or diet changes depending on your goals.</p>"
+      },
+      {
+        "question": "What if I'm going through perimenopause?",
+        "answerHtml": "<p>You're right on time. Charting can help you make sense of the perimenopausal transition, understand where you are in it, and empower you with knowledge to take meaningful action—whether for health maintenance or reproductive goals.</p>"
+      },
+      {
+        "question": "I'm tracking my period with an app. How is this different?",
+        "answerHtml": "<p>An app uses calculations to <em>estimate</em> when you might ovulate based on your past. This systematic method is about checking in <strong>real-time</strong> with your day-to-day changes. It's about getting closer to your body and confirming ovulation accurately.</p>"
+      },
+      {
+        "question": "What if I'm currently using a hormonal contraceptive?",
+        "answerHtml": "<p>You can still learn how to chart! While hormonal methods suppress biomarkers, starting the education now prepares you for the transition. Let's do a discovery call so I can find out more about your intentions.</p>"
+      },
+      {
+        "question": "Are you associated with a church or religious organization?",
+        "answerHtml": "<p>No. Fertility Awareness-Based Methods are split into two groups. <strong>Natural Family Planning (NFP)</strong> methods are religious, while <strong>Fertility Awareness Methods (FAM)</strong> are secular. The Justisse Method is the largest secular FABM in the world.</p>"
+      }
+    ]
+  },
+  "offeringsSection": {
+    "heading": "Learning Journeys",
+    "intro": "From structured hybrid programs to intensive private coaching, each pathway is designed to move you toward mastery.",
+    "cards": [
+      {
+        "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Seed & Soil",
+        "badge": "Active Enrollment",
+        "title": "Seed & Soil Fertility",
+        "subtitle": "An 8-week hybrid journey: 2 group and 4 private sessions.",
+        "price": "$450",
+        "priceNote": "Split payments available",
+        "ctaLabel": "Register Now"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1512438248408-28ff50863b1b?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Charting for Health",
+        "badge": "",
+        "title": "Charting for Health",
+        "subtitle": "6 intensive private sessions to establish your health baseline.",
+        "price": "$360",
+        "priceNote": "",
+        "ctaLabel": "Inquire"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80",
+        "imageAlt": "Reproductive Sovereignty",
+        "badge": "",
+        "title": "Reproductive Sovereignty",
+        "subtitle": "8 private sessions focused on avoiding or achieving pregnancy.",
+        "price": "$480",
+        "priceNote": "",
+        "ctaLabel": "Inquire"
+      }
+    ],
+    "footerLine1": "Also offering: <strong>The Period Positivity Workshop</strong> | <strong>The Peri Prep Lab</strong>",
+    "footerLine2": "* Full or partial trades available *"
+  },
+  "footer": {
+    "mission": "Teaching body literacy as a tool for empowerment, safety, and liberation.",
+    "location": "Wolfville, Nova Scotia, Canada",
+    "locationSub": "From your first period to your last.",
+    "ctaHeadline": "Ready to claim your reproductive agency?",
+    "ctaButton": "Book My Discovery Call",
+    "copyrightAfterYear": "Full Cycle Health & Fertility Awareness. Sophia Bush Anderson.",
+    "tagline": "Empowerment through embodiment."
+  }
+}

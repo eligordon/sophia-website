@@ -1,1 +1,8 @@
 .DS_Store
+node_modules/
+tina/__generated__/.cache/
+.npm-cache/
+.env
+.env.local
+uploads/*
+!uploads/.gitkeep

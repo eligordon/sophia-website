@@ -135,11 +135,11 @@
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold uppercase tracking-widest text-stone-600 font-brand">
-                <a href="#wisdom" class="hover:text-rose-800 transition">Wisdom</a>
-                <a href="#pathways" class="hover:text-rose-800 transition">Pathways</a>
-                <a href="#about" class="hover:text-rose-800 transition">Sophia</a>
-                <a href="#faq" class="hover:text-rose-800 transition">FAQ</a>
-                <a href="#offerings" class="bg-rose-800 text-white px-6 py-2.5 rounded-full hover:bg-rose-900 transition shadow-sm">Get started</a>
+                <a href="#wisdom" class="hover:text-rose-800 transition" data-tina="navigation.wisdom">Wisdom</a>
+                <a href="#pathways" class="hover:text-rose-800 transition" data-tina="navigation.pathways">Pathways</a>
+                <a href="#about" class="hover:text-rose-800 transition" data-tina="navigation.sophia">Sophia</a>
+                <a href="#faq" class="hover:text-rose-800 transition" data-tina="navigation.faq">FAQ</a>
+                <a href="#offerings" class="bg-rose-800 text-white px-6 py-2.5 rounded-full hover:bg-rose-900 transition shadow-sm" data-tina="navigation.getStarted">Get started</a>
             </div>
 
             <!-- Mobile Toggle -->
@@ -152,11 +152,11 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-stone-200 py-6 px-8 flex flex-col space-y-4 font-brand text-sm uppercase tracking-widest font-semibold" role="region" aria-label="Mobile navigation">
-            <a href="#wisdom" onclick="toggleMenu()">Wisdom</a>
-            <a href="#pathways" onclick="toggleMenu()">Pathways</a>
-            <a href="#about" onclick="toggleMenu()">Sophia</a>
-            <a href="#faq" onclick="toggleMenu()">FAQ</a>
-            <a href="#offerings" onclick="toggleMenu()" class="text-rose-800">Explore offerings</a>
+            <a href="#wisdom" onclick="toggleMenu()" data-tina="navigation.wisdom">Wisdom</a>
+            <a href="#pathways" onclick="toggleMenu()" data-tina="navigation.pathways">Pathways</a>
+            <a href="#about" onclick="toggleMenu()" data-tina="navigation.sophia">Sophia</a>
+            <a href="#faq" onclick="toggleMenu()" data-tina="navigation.faq">FAQ</a>
+            <a href="#offerings" onclick="toggleMenu()" class="text-rose-800" data-tina="navigation.mobileOfferings">Explore offerings</a>
         </div>
     </nav>
 
@@ -164,17 +164,17 @@
     <header class="relative pt-48 pb-32 px-6 overflow-hidden min-h-[85vh] flex items-center">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
             <div class="text-left max-w-2xl md:max-w-none">
-                <p class="text-rose-800 font-semibold tracking-widest uppercase text-xs font-brand mb-6">Full Cycle Health · Fertility awareness education</p>
-                <h1 class="text-6xl md:text-7xl font-serif text-stone-900 mb-8 leading-[1.1]">Body literacy for every body.</h1>
-                <p class="text-xl md:text-2xl text-stone-600 mb-6 leading-relaxed max-w-2xl">
+                <p class="text-rose-800 font-semibold tracking-widest uppercase text-xs font-brand mb-6" data-tina="hero.eyebrow">Full Cycle Health · Fertility awareness education</p>
+                <h1 class="text-6xl md:text-7xl font-serif text-stone-900 mb-8 leading-[1.1]" data-tina="hero.headline">Body literacy for every body.</h1>
+                <p class="text-xl md:text-2xl text-stone-600 mb-6 leading-relaxed max-w-2xl" data-tina="hero.paragraph1">
                     We teach evidence-based menstrual cycle charting through private coaching and small-group programs—so you can read your fertile signs, care for your health, and make informed choices about contraception, conception, and perimenopause.
                 </p>
-                <p class="text-lg md:text-xl text-stone-600 mb-12 leading-relaxed max-w-2xl">
+                <p class="text-lg md:text-xl text-stone-600 mb-12 leading-relaxed max-w-2xl" data-tina="hero.paragraph2">
                     Led by fertility awareness educator Sophia Bush Anderson, in person in Wolfville, Nova Scotia and online. From your first period through midlife transitions—including coming off hormonal birth control—you build real skill, not guesswork.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="#offerings" class="bg-stone-900 text-white text-center px-10 py-4 rounded-full text-lg font-medium shadow-lg hover:bg-stone-800 transition font-brand">Explore offerings</a>
-                    <a href="#footer-contact" class="bg-white text-stone-800 border border-stone-200 text-center px-10 py-4 rounded-full text-lg font-medium shadow-sm hover:border-rose-200 transition font-brand">Get in touch</a>
+                    <a href="#offerings" class="bg-stone-900 text-white text-center px-10 py-4 rounded-full text-lg font-medium shadow-lg hover:bg-stone-800 transition font-brand" data-tina="hero.primaryCta">Explore offerings</a>
+                    <a href="#footer-contact" class="bg-white text-stone-800 border border-stone-200 text-center px-10 py-4 rounded-full text-lg font-medium shadow-sm hover:border-rose-200 transition font-brand" data-tina="hero.secondaryCta">Get in touch</a>
                 </div>
             </div>
             <div class="relative hidden md:block">
@@ -182,7 +182,9 @@
                 <div class="rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80"
                          alt="Body awareness and reflection"
-                         class="w-full h-[550px] object-cover">
+                         class="w-full h-[550px] object-cover"
+                         data-tina="hero.image"
+                         data-tina-alt="hero.imageAlt">
                 </div>
             </div>
         </div>
@@ -194,22 +196,24 @@
                 <div class="order-2 md:order-1 relative">
                     <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"
                          alt="Mindfulness and body wisdom"
-                         class="rounded-3xl shadow-lg w-full h-[500px] object-cover border-4 border-white">
+                         class="rounded-3xl shadow-lg w-full h-[500px] object-cover border-4 border-white"
+                         data-tina="wisdom.image"
+                         data-tina-alt="wisdom.imageAlt">
                 </div>
                 <div class="space-y-6 order-1 md:order-2">
-                    <span class="text-rose-800 font-semibold tracking-widest uppercase text-xs font-brand">The Vision</span>
-                    <h2 class="text-4xl font-serif text-stone-900 leading-tight">Your body has its own individual ecology.</h2>
-                    <p class="text-lg text-stone-700 leading-relaxed">
+                    <span class="text-rose-800 font-semibold tracking-widest uppercase text-xs font-brand" data-tina="wisdom.eyebrow">The Vision</span>
+                    <h2 class="text-4xl font-serif text-stone-900 leading-tight" data-tina="wisdom.heading">Your body has its own individual ecology.</h2>
+                    <p class="text-lg text-stone-700 leading-relaxed" data-tina-html="wisdom.body1Html">
                         This approach invites you to become the expert on your own experience. By exploring the terrain of your body—its boundaries, patterns, and points of change—you begin to understand what is normal for <em>you</em>.
                     </p>
-                    <p class="text-lg text-stone-700 leading-relaxed">
+                    <p class="text-lg text-stone-700 leading-relaxed" data-tina="wisdom.body2">
                         With this data, you can recognize the patterns of each season and spot the signs of dis-ease. This is about deep self-understanding and true agency.
                     </p>
                     <div class="pt-6">
                         <blockquote class="text-2xl font-serif italic text-stone-800 leading-snug">
-                            <p>“There is no reason why women shouldn’t have as much information about their bodies as physicians do.”</p>
+                            <p data-tina="wisdom.quote">“There is no reason why women shouldn’t have as much information about their bodies as physicians do.”</p>
                             <footer class="mt-4 text-xs font-medium text-stone-400 uppercase tracking-widest font-brand not-italic">
-                                <cite class="not-italic font-medium">Dr. Jane Patterson, M.D.</cite>
+                                <cite class="not-italic font-medium" data-tina="wisdom.quoteAttribution">Dr. Jane Patterson, M.D.</cite>
                             </footer>
                         </blockquote>
                     </div>
@@ -221,46 +225,46 @@
     <section id="pathways" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 max-w-3xl mx-auto">
-                <h2 class="text-4xl font-serif text-stone-900 mb-6">Where are you in your journey?</h2>
-                <p class="text-lg text-stone-600">
+                <h2 class="text-4xl font-serif text-stone-900 mb-6" data-tina="pathwaysSection.heading">Where are you in your journey?</h2>
+                <p class="text-lg text-stone-600" data-tina="pathwaysSection.intro">
                     Different seasons of life require different maps. Whether you are navigating health transitions or seeking reproductive autonomy, we provide the framework to navigate your cycle with confidence.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="pathway-card flex flex-col overflow-hidden shadow-sm">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&w=400&q=80" alt="Autonomy" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?auto=format&fit=crop&w=400&q=80" alt="Autonomy" class="w-full h-full object-cover" data-tina="pathwaysSection.pathways.0.image" data-tina-alt="pathwaysSection.pathways.0.imageAlt"></div>
                     <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand">Autonomy</span>
-                        <h3 class="text-xl font-serif font-bold mb-4">Breaking up with the Pill</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Move beyond "shutting down" your system. Gain the tools to understand your actual risks and make informed reproductive choices.</p>
+                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand" data-tina="pathwaysSection.pathways.0.tag">Autonomy</span>
+                        <h3 class="text-xl font-serif font-bold mb-4" data-tina="pathwaysSection.pathways.0.title">Breaking up with the Pill</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed" data-tina="pathwaysSection.pathways.0.description">Move beyond "shutting down" your system. Gain the tools to understand your actual risks and make informed reproductive choices.</p>
                     </div>
                 </div>
 
                 <div class="pathway-card flex flex-col overflow-hidden shadow-sm">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Sovereignty" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Sovereignty" class="w-full h-full object-cover" data-tina="pathwaysSection.pathways.1.image" data-tina-alt="pathwaysSection.pathways.1.imageAlt"></div>
                     <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand">Sovereignty</span>
-                        <h3 class="text-xl font-serif font-bold mb-4">Mastering your cycle</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Stop guessing and start knowing. Gain an evidence-based system for deep self-understanding and sexual empowerment.</p>
+                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand" data-tina="pathwaysSection.pathways.1.tag">Sovereignty</span>
+                        <h3 class="text-xl font-serif font-bold mb-4" data-tina="pathwaysSection.pathways.1.title">Mastering your cycle</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed" data-tina="pathwaysSection.pathways.1.description">Stop guessing and start knowing. Gain an evidence-based system for deep self-understanding and sexual empowerment.</p>
                     </div>
                 </div>
 
                 <div class="pathway-card flex flex-col overflow-hidden shadow-sm">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80" alt="Transition" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80" alt="Transition" class="w-full h-full object-cover" data-tina="pathwaysSection.pathways.2.image" data-tina-alt="pathwaysSection.pathways.2.imageAlt"></div>
                     <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand">Transition</span>
-                        <h3 class="text-xl font-serif font-bold mb-4">Navigating Perimenopause</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Shaky ground becomes stable through observation. Charting helps identify where you are in the journey and empowers you to manage shifts.</p>
+                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand" data-tina="pathwaysSection.pathways.2.tag">Transition</span>
+                        <h3 class="text-xl font-serif font-bold mb-4" data-tina="pathwaysSection.pathways.2.title">Navigating Perimenopause</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed" data-tina="pathwaysSection.pathways.2.description">Shaky ground becomes stable through observation. Charting helps identify where you are in the journey and empowers you to manage shifts.</p>
                     </div>
                 </div>
 
                 <div class="pathway-card flex flex-col overflow-hidden shadow-sm">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80" alt="Fertility" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80" alt="Fertility" class="w-full h-full object-cover" data-tina="pathwaysSection.pathways.3.image" data-tina-alt="pathwaysSection.pathways.3.imageAlt"></div>
                     <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand">Fertility</span>
-                        <h3 class="text-xl font-serif font-bold mb-4">Conscious Conception</h3>
-                        <p class="text-stone-600 text-sm leading-relaxed">Your cycle is a health report card. Use diagnostic charting to restore your terrain and understand your specific window of opportunity.</p>
+                        <span class="text-[10px] uppercase tracking-widest text-rose-800 font-bold mb-3 inline-block font-brand" data-tina="pathwaysSection.pathways.3.tag">Fertility</span>
+                        <h3 class="text-xl font-serif font-bold mb-4" data-tina="pathwaysSection.pathways.3.title">Conscious Conception</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed" data-tina="pathwaysSection.pathways.3.description">Your cycle is a health report card. Use diagnostic charting to restore your terrain and understand your specific window of opportunity.</p>
                     </div>
                 </div>
             </div>
@@ -276,26 +280,28 @@
                     <div class="profile-img-box">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=100"
                              alt="Sophia Bush Anderson"
-                             class="w-full aspect-[4/5] object-cover">
+                             class="w-full aspect-[4/5] object-cover"
+                             data-tina="about.profileImage"
+                             data-tina-alt="about.profileImageAlt">
                     </div>
                     <div class="mt-8 text-center lg:text-left">
-                        <p class="text-4xl font-serif text-stone-900 font-bold mb-1">Sophia Bush Anderson</p>
-                        <p class="text-rose-800 font-semibold tracking-widest text-xs uppercase font-brand">Fertility Awareness Educator</p>
+                        <p class="text-4xl font-serif text-stone-900 font-bold mb-1" data-tina="about.name">Sophia Bush Anderson</p>
+                        <p class="text-rose-800 font-semibold tracking-widest text-xs uppercase font-brand" data-tina="about.role">Fertility Awareness Educator</p>
                         <div class="mt-4 text-stone-400 font-brand uppercase tracking-tighter text-[10px]">
-                            <span>Wolfville, Nova Scotia, Canada</span>
+                            <span data-tina="about.location">Wolfville, Nova Scotia, Canada</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 space-y-12">
                     <div class="space-y-8">
-                        <span class="text-rose-800 font-semibold tracking-widest uppercase text-xs font-brand">Meet Your Guide</span>
-                        <h2 class="text-5xl md:text-6xl font-serif text-stone-900 leading-tight">Empowerment through Body Literacy.</h2>
+                        <span class="text-rose-800 font-semibold tracking-widest uppercase text-xs font-brand" data-tina="about.eyebrow">Meet Your Guide</span>
+                        <h2 class="text-5xl md:text-6xl font-serif text-stone-900 leading-tight" data-tina="about.heading">Empowerment through Body Literacy.</h2>
 
                         <div class="space-y-6 text-stone-700 leading-relaxed text-lg">
-                            <p>I’m Sophia, and I’m passionate about teaching Body Literacy as a tool for empowerment, safety, and liberation. I believe that learning the language of our bodies allows us to be in better relationship to ourselves and each other.</p>
-                            <p>My work is deeply informed by my previous life as a dance artist and Pilates teacher. I have tied my passion for social justice to my work through studies in international development, sustainability, and community development at Dalhousie and Acadia Universities.</p>
-                            <p class="font-medium text-stone-900 italic border-l-4 border-rose-800 pl-6 py-2">
+                            <p data-tina="about.bio1">I’m Sophia, and I’m passionate about teaching Body Literacy as a tool for empowerment, safety, and liberation. I believe that learning the language of our bodies allows us to be in better relationship to ourselves and each other.</p>
+                            <p data-tina="about.bio2">My work is deeply informed by my previous life as a dance artist and Pilates teacher. I have tied my passion for social justice to my work through studies in international development, sustainability, and community development at Dalhousie and Acadia Universities.</p>
+                            <p class="font-medium text-stone-900 italic border-l-4 border-rose-800 pl-6 py-2" data-tina="about.pullQuote">
                                 This work is for anyone who wants their pregnancy, birth, and parenting to be consensual.
                             </p>
                         </div>
@@ -305,26 +311,26 @@
                         <h3 class="text-xl font-serif text-rose-900 font-bold">Our Shared Values</h3>
                         <div class="grid sm:grid-cols-2 gap-y-4 gap-x-8 font-brand uppercase tracking-widest text-[10px] font-semibold text-stone-800">
                             <div class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> Reproductive Justice
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> <span data-tina="about.values.0">Reproductive Justice</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> Intersectional Feminism
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> <span data-tina="about.values.1">Intersectional Feminism</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> Body Ecology
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> <span data-tina="about.values.2">Body Ecology</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> Consent-Based Care
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> <span data-tina="about.values.3">Consent-Based Care</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> Sex Positive
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> <span data-tina="about.values.4">Sex Positive</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> Healing Justice
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-800"></span> <span data-tina="about.values.5">Healing Justice</span>
                             </div>
                         </div>
                         <div class="pt-8 border-t border-rose-200">
-                            <p class="text-stone-600 text-sm leading-relaxed italic">
+                            <p class="text-stone-600 text-sm leading-relaxed italic" data-tina="about.valuesFooter">
                                 Based in Wolfville, Nova Scotia, Full Cycle Health serves clients locally and online, providing a holistic view of the cycle as a vital part of personal ecology.
                             </p>
                         </div>
@@ -337,76 +343,76 @@
     <section id="faq" class="py-24 bg-stone-50/50">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif text-stone-900 mb-6">Common Questions</h2>
-                <p class="text-stone-600">Clarifications on the method and how we work together.</p>
+                <h2 class="text-4xl font-serif text-stone-900 mb-6" data-tina="faqSection.heading">Common Questions</h2>
+                <p class="text-stone-600" data-tina="faqSection.intro">Clarifications on the method and how we work together.</p>
             </div>
             <div class="space-y-4">
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>How will we meet?</span>
+                        <span data-tina="faqSection.items.0.question">How will we meet?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.0.answerHtml">
                         <p>We offer flexible meeting options to fit your life. Sessions are available both <strong>online</strong> via secure video conferencing or <strong>in person</strong> at our local practice space in <strong>Wolfville, Nova Scotia, Canada</strong>.</p>
                     </div>
                 </details>
 
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>How do I know this is for me?</span>
+                        <span data-tina="faqSection.items.1.question">How do I know this is for me?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.1.answerHtml">
                         <p>Ask yourself: Do you want to learn more about your body? Do you want to know how to prevent pregnancy effectively with just your own detective skills? Do you want to avoid hormonal disruptors or achieve pregnancy more quickly? If you want to improve your menstrual health or understand the seasons of your cycle, you're in the right place.</p>
                     </div>
                 </details>
 
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>What's involved in the learning process?</span>
+                        <span data-tina="faqSection.items.2.question">What's involved in the learning process?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.2.answerHtml">
                         <p>We go deep into reproductive anatomy, the mechanisms of the menstrual cycle, and primary signs of fertility. You'll learn to observe these in your body daily and chart them according to the Justisse Method. This may also involve lifestyle or diet changes depending on your goals.</p>
                     </div>
                 </details>
 
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>What if I'm going through perimenopause?</span>
+                        <span data-tina="faqSection.items.3.question">What if I'm going through perimenopause?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.3.answerHtml">
                         <p>You're right on time. Charting can help you make sense of the perimenopausal transition, understand where you are in it, and empower you with knowledge to take meaningful action—whether for health maintenance or reproductive goals.</p>
                     </div>
                 </details>
 
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>I'm tracking my period with an app. How is this different?</span>
+                        <span data-tina="faqSection.items.4.question">I'm tracking my period with an app. How is this different?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.4.answerHtml">
                         <p>An app uses calculations to <em>estimate</em> when you might ovulate based on your past. This systematic method is about checking in <strong>real-time</strong> with your day-to-day changes. It's about getting closer to your body and confirming ovulation accurately.</p>
                     </div>
                 </details>
 
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>What if I'm currently using a hormonal contraceptive?</span>
+                        <span data-tina="faqSection.items.5.question">What if I'm currently using a hormonal contraceptive?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.5.answerHtml">
                         <p>You can still learn how to chart! While hormonal methods suppress biomarkers, starting the education now prepares you for the transition. Let's do a discovery call so I can find out more about your intentions.</p>
                     </div>
                 </details>
 
                 <details class="faq-item bg-stone-50 rounded-2xl border border-stone-200 overflow-hidden">
                     <summary class="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none font-semibold text-stone-800">
-                        <span>Are you associated with a church or religious organization?</span>
+                        <span data-tina="faqSection.items.6.question">Are you associated with a church or religious organization?</span>
                         <span class="faq-chevron text-rose-800 shrink-0 text-xl leading-none" aria-hidden="true">+</span>
                     </summary>
-                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm">
+                    <div class="px-6 pb-6 pt-0 text-stone-600 leading-relaxed text-sm" data-tina-html="faqSection.items.6.answerHtml">
                         <p>No. Fertility Awareness-Based Methods are split into two groups. <strong>Natural Family Planning (NFP)</strong> methods are religious, while <strong>Fertility Awareness Methods (FAM)</strong> are secular. The Justisse Method is the largest secular FABM in the world.</p>
                     </div>
                 </details>
@@ -417,46 +423,46 @@
     <section id="offerings" class="py-24 bg-stone-100/50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 max-w-2xl mx-auto">
-                <h2 class="text-4xl font-serif text-stone-900 mb-6">Learning Journeys</h2>
-                <p class="text-stone-600">From structured hybrid programs to intensive private coaching, each pathway is designed to move you toward mastery.</p>
+                <h2 class="text-4xl font-serif text-stone-900 mb-6" data-tina="offeringsSection.heading">Learning Journeys</h2>
+                <p class="text-stone-600" data-tina="offeringsSection.intro">From structured hybrid programs to intensive private coaching, each pathway is designed to move you toward mastery.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-3xl border border-stone-200 shadow-sm relative overflow-hidden flex flex-col group transition-transform hover:-translate-y-2">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Seed & Soil" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Seed & Soil" class="w-full h-full object-cover" data-tina="offeringsSection.cards.0.image" data-tina-alt="offeringsSection.cards.0.imageAlt"></div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <div class="absolute top-4 right-4 bg-rose-800 text-white text-[10px] uppercase font-bold px-4 py-1 tracking-widest rounded-full font-brand">Active Enrollment</div>
-                        <h3 class="text-2xl font-serif mb-3">Seed & Soil Fertility</h3>
-                        <p class="text-stone-500 text-sm mb-6">An 8-week hybrid journey: 2 group and 4 private sessions.</p>
-                        <div class="text-3xl font-bold text-rose-900 mb-8 font-brand">$450 <span class="text-xs font-normal text-stone-400 block mt-1">Split payments available</span></div>
-                        <a href="#book-discovery-call" class="w-full block text-center bg-rose-800 text-white py-4 rounded-xl font-medium hover:bg-rose-900 transition font-brand uppercase tracking-widest text-xs">Register Now</a>
+                        <div class="absolute top-4 right-4 bg-rose-800 text-white text-[10px] uppercase font-bold px-4 py-1 tracking-widest rounded-full font-brand" data-tina-badge="offeringsSection.cards.0.badge">Active Enrollment</div>
+                        <h3 class="text-2xl font-serif mb-3" data-tina="offeringsSection.cards.0.title">Seed & Soil Fertility</h3>
+                        <p class="text-stone-500 text-sm mb-6" data-tina="offeringsSection.cards.0.subtitle">An 8-week hybrid journey: 2 group and 4 private sessions.</p>
+                        <div class="text-3xl font-bold text-rose-900 mb-8 font-brand"><span data-tina="offeringsSection.cards.0.price">$450</span> <span class="text-xs font-normal text-stone-400 block mt-1" data-tina="offeringsSection.cards.0.priceNote">Split payments available</span></div>
+                        <a href="#book-discovery-call" class="w-full block text-center bg-rose-800 text-white py-4 rounded-xl font-medium hover:bg-rose-900 transition font-brand uppercase tracking-widest text-xs" data-tina="offeringsSection.cards.0.ctaLabel">Register Now</a>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-3xl border border-stone-200 shadow-sm flex flex-col group transition-transform hover:-translate-y-2">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1512438248408-28ff50863b1b?auto=format&fit=crop&w=400&q=80" alt="Charting for Health" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1512438248408-28ff50863b1b?auto=format&fit=crop&w=400&q=80" alt="Charting for Health" class="w-full h-full object-cover" data-tina="offeringsSection.cards.1.image" data-tina-alt="offeringsSection.cards.1.imageAlt"></div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-serif mb-3">Charting for Health</h3>
-                        <p class="text-stone-500 text-sm mb-6">6 intensive private sessions to establish your health baseline.</p>
-                        <div class="text-3xl font-bold text-stone-900 mb-8 font-brand">$360</div>
-                        <a href="#book-discovery-call" class="w-full block text-center bg-stone-100 text-stone-800 py-4 rounded-xl font-medium hover:bg-stone-200 transition font-brand uppercase tracking-widest text-xs">Inquire</a>
+                        <h3 class="text-2xl font-serif mb-3" data-tina="offeringsSection.cards.1.title">Charting for Health</h3>
+                        <p class="text-stone-500 text-sm mb-6" data-tina="offeringsSection.cards.1.subtitle">6 intensive private sessions to establish your health baseline.</p>
+                        <div class="text-3xl font-bold text-stone-900 mb-8 font-brand"><span data-tina="offeringsSection.cards.1.price">$360</span> <span class="text-xs font-normal text-stone-400 block mt-1" data-tina="offeringsSection.cards.1.priceNote"></span></div>
+                        <a href="#book-discovery-call" class="w-full block text-center bg-stone-100 text-stone-800 py-4 rounded-xl font-medium hover:bg-stone-200 transition font-brand uppercase tracking-widest text-xs" data-tina="offeringsSection.cards.1.ctaLabel">Inquire</a>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-3xl border border-stone-200 shadow-sm flex flex-col group transition-transform hover:-translate-y-2">
-                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="Reproductive Sovereignty" class="w-full h-full object-cover"></div>
+                    <div class="h-44 overflow-hidden"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="Reproductive Sovereignty" class="w-full h-full object-cover" data-tina="offeringsSection.cards.2.image" data-tina-alt="offeringsSection.cards.2.imageAlt"></div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-serif mb-3">Reproductive Sovereignty</h3>
-                        <p class="text-stone-500 text-sm mb-6">8 private sessions focused on avoiding or achieving pregnancy.</p>
-                        <div class="text-3xl font-bold text-stone-900 mb-8 font-brand">$480</div>
-                        <a href="#book-discovery-call" class="w-full block text-center bg-stone-100 text-stone-800 py-4 rounded-xl font-medium hover:bg-stone-200 transition font-brand uppercase tracking-widest text-xs">Inquire</a>
+                        <h3 class="text-2xl font-serif mb-3" data-tina="offeringsSection.cards.2.title">Reproductive Sovereignty</h3>
+                        <p class="text-stone-500 text-sm mb-6" data-tina="offeringsSection.cards.2.subtitle">8 private sessions focused on avoiding or achieving pregnancy.</p>
+                        <div class="text-3xl font-bold text-stone-900 mb-8 font-brand"><span data-tina="offeringsSection.cards.2.price">$480</span> <span class="text-xs font-normal text-stone-400 block mt-1" data-tina="offeringsSection.cards.2.priceNote"></span></div>
+                        <a href="#book-discovery-call" class="w-full block text-center bg-stone-100 text-stone-800 py-4 rounded-xl font-medium hover:bg-stone-200 transition font-brand uppercase tracking-widest text-xs" data-tina="offeringsSection.cards.2.ctaLabel">Inquire</a>
                     </div>
                 </div>
             </div>
 
             <div class="mt-16 text-center text-stone-500 space-y-4">
-                <p class="text-sm font-medium">Also offering: <strong>The Period Positivity Workshop</strong> | <strong>The Peri Prep Lab</strong></p>
-                <p class="text-xs uppercase tracking-widest font-semibold text-rose-800 font-brand">* Full or partial trades available *</p>
+                <p class="text-sm font-medium" data-tina-html="offeringsSection.footerLine1">Also offering: <strong>The Period Positivity Workshop</strong> | <strong>The Peri Prep Lab</strong></p>
+                <p class="text-xs uppercase tracking-widest font-semibold text-rose-800 font-brand" data-tina="offeringsSection.footerLine2">* Full or partial trades available *</p>
             </div>
         </div>
     </section>
@@ -470,26 +476,27 @@
                     <div class="logo-container logo-container--footer shrink-0">
                         <img src="logo.svg" alt="Full Cycle Health" width="500" height="700" decoding="async">
                     </div>
-                    <p class="text-lg leading-relaxed max-w-md min-w-0 flex-1 pt-0.5">Teaching body literacy as a tool for empowerment, safety, and liberation.</p>
+                    <p class="text-lg leading-relaxed max-w-md min-w-0 flex-1 pt-0.5" data-tina="footer.mission">Teaching body literacy as a tool for empowerment, safety, and liberation.</p>
                 </div>
                 <div class="space-y-2">
-                    <div class="text-sm uppercase tracking-widest font-semibold text-rose-400 font-brand">Wolfville, Nova Scotia, Canada</div>
-                    <div class="text-xs tracking-widest opacity-60">From your first period to your last.</div>
+                    <div class="text-sm uppercase tracking-widest font-semibold text-rose-400 font-brand" data-tina="footer.location">Wolfville, Nova Scotia, Canada</div>
+                    <div class="text-xs tracking-widest opacity-60" data-tina="footer.locationSub">From your first period to your last.</div>
                 </div>
             </div>
             <div id="book-discovery-call" class="flex flex-col items-start md:items-end justify-center gap-8 scroll-mt-28">
-                <p class="text-white font-serif text-2xl italic">Ready to claim your reproductive agency?</p>
+                <p class="text-white font-serif text-2xl italic" data-tina="footer.ctaHeadline">Ready to claim your reproductive agency?</p>
                 <div class="flex gap-4">
-                    <a href="#footer-contact" class="inline-flex items-center justify-center bg-rose-800 text-white px-10 py-4 rounded-full hover:bg-rose-900 transition shadow-lg font-medium font-brand uppercase tracking-widest text-xs">Book My Discovery Call</a>
+                    <a href="#footer-contact" class="inline-flex items-center justify-center bg-rose-800 text-white px-10 py-4 rounded-full hover:bg-rose-900 transition shadow-lg font-medium font-brand uppercase tracking-widest text-xs" data-tina="footer.ctaButton">Book My Discovery Call</a>
                 </div>
             </div>
         </div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] font-medium gap-4">
-            <p>&copy; <span id="year"></span> Full Cycle Health & Fertility Awareness. Sophia Bush Anderson.</p>
-            <p>Empowerment through embodiment.</p>
+            <p>&copy; <span id="year"></span> <span data-tina="footer.copyrightAfterYear">Full Cycle Health & Fertility Awareness. Sophia Bush Anderson.</span></p>
+            <p data-tina="footer.tagline">Empowerment through embodiment.</p>
         </div>
     </footer>
 
+    <script src="content-loader.js" defer></script>
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');

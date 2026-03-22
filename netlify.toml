@@ -1,0 +1,9 @@
+# Netlify + TinaCloud: connect this repo, then set NEXT_PUBLIC_TINA_CLIENT_ID and
+# TINA_TOKEN under Site configuration → Environment variables (see .env.example).
+
+[build]
+  command = "npm run build:cloud"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "22"
