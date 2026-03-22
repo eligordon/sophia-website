@@ -38,7 +38,9 @@ export default defineConfig({
             create: false,
             delete: false,
           },
-          router: () => "/",
+          // No `router` here: that mode is for visual/contextual editing on the live
+          // page (React + Tina field helpers). This site is static HTML + content-loader.js,
+          // so editors use the standard sidebar form for content/pages/home.json instead.
         },
         fields: [
           {
