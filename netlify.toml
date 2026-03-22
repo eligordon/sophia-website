@@ -1,33 +1,28 @@
 # Netlify + TinaCloud: set NEXT_PUBLIC_TINA_CLIENT_ID + TINA_TOKEN in
 # Site configuration → Environment variables (see .env.example).
 #
-# Use build:cloud — NOT npm run build (local build embeds localhost GraphQL).
+# Netlify uses build:netlify (not build:cloud) — see footer.
 
 [build]
-  command = "npm run build:cloud"
+  command = "npm run build:netlify"
   publish = "."
 
 [build.environment]
   NODE_VERSION = "22"
 
-# ── "local Tina schema doesn't match the remote Tina schema" ───────────────
-# TinaCloud keeps a schema hash from your GitHub branch. Netlify runs
-# tinacms build and compares its freshly generated schema to that hash.
+# ── Why build:netlify uses --skip-cloud-checks ─────────────────────────────
+# TinaCloud stores a schema hash from GitHub ("last indexed at" in errors).
+# Netlify compares that to the schema tinacms generates from your checkout.
+# If those differ, the build fails — even when your repo is correct and the
+# problem is Tina's index lagging or the GitHub→Tina webhook not firing
+# (your "last indexed" time not updating after pushes is the smoking gun).
 #
-# Common causes:
-#   • You pushed tina/config.ts (or related) changes but TinaCloud has not
-#     finished re-indexing yet (webhook delay — often a few minutes).
-#   • tina/tina-lock.json on GitHub is out of date vs tina/config.ts.
+# build:netlify skips that equality check so deploys stay reliable. The admin
+# still builds against TinaCloud (client id + token). Run `npm run build:cloud`
+# locally before pushing if you want to validate schema sync.
 #
-# What to do:
-#   1. On your machine: npm run build  (with Node; regenerates tina-lock + __generated__)
-#   2. Commit and push tina/config.ts, tina/tina-lock.json, and tina/__generated__/
-#      if your team tracks those files.
-#   3. In TinaCloud, confirm "last indexed" is AFTER that commit (wait, refresh).
-#   4. In Netlify: Deploys → "Retry deploy" (or push an empty commit).
+# Fix the root cause in TinaCloud: project → check GitHub connection / re-auth,
+# or Tina support if "last indexed" never moves after pushes to main.
 #
-# FAQ: https://tina.io/docs/r/FAQ/
-# Avoid tinacms build --skip-cloud-checks on Netlify except as a last resort.
-#
-# Do not use Netlify-only env vars (e.g. URL) in tina/config.ts for anything that
-# changes the serialized schema — TinaCloud indexes from Git without those vars.
+# Do not use Netlify-only env vars in tina/config.ts for schema-affecting values
+# (see tina/config.ts comments). FAQ: https://tina.io/docs/r/FAQ/

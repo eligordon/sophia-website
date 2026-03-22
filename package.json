@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "tinacms dev -c \"npx --yes serve . -l 3000\"",
     "build": "tinacms build --skip-cloud-checks --local --no-client-build-cache",
-    "build:cloud": "tinacms build --no-client-build-cache"
+    "build:cloud": "tinacms build --no-client-build-cache",
+    "build:netlify": "tinacms build --no-client-build-cache --skip-cloud-checks"
   },
   "devDependencies": {
     "@tinacms/cli": "^2.1.11",
