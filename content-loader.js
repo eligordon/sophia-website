@@ -38,16 +38,165 @@
     });
   }
 
-  function applyBadge(root, path) {
-    root.querySelectorAll("[data-tina-badge]").forEach(function (el) {
-      if (el.getAttribute("data-tina-badge") !== path) return;
-      var value = get(window.__siteContent, path);
-      if (!value) {
-        el.classList.add("hidden");
-        return;
-      }
-      el.classList.remove("hidden");
+  // Visual variants applied to a cloned offering card.
+  // Driven by the section ("individual" vs "group") and whether the card has
+  // a badge set ("featured" vs "default"). Keeping the rules here means the
+  // template's classes stay layout-only and editors don't need to know CSS.
+  var OFFERING_STYLE = {
+    individual: {
+      tagline: ["text-rose-800/90"],
+      pricePrimary: ["text-2xl", "sm:text-3xl"],
+    },
+    group: {
+      tagline: ["text-stone-600"],
+      pricePrimary: ["text-xl", "sm:text-2xl"],
+    },
+    featured: {
+      pricePrimary: ["text-rose-950"],
+      cta: [
+        "bg-rose-900",
+        "text-white",
+        "hover:bg-rose-950",
+      ],
+    },
+    default: {
+      pricePrimary: ["text-stone-900"],
+      cta: [
+        "border",
+        "border-stone-400",
+        "text-stone-800",
+        "bg-white",
+        "hover:bg-stone-50",
+        "hover:border-stone-500",
+      ],
+    },
+  };
+
+  function setSlotText(card, slot, value) {
+    var el = card.querySelector('[data-slot="' + slot + '"]');
+    if (!el) return null;
+    if (value && String(value).trim()) {
       el.textContent = value;
+      el.classList.remove("hidden");
+    } else {
+      el.textContent = "";
+      el.classList.add("hidden");
+    }
+    return el;
+  }
+
+  function setSlotHtml(card, slot, value) {
+    var el = card.querySelector('[data-slot="' + slot + '"]');
+    if (!el) return null;
+    if (value && String(value).trim()) {
+      el.innerHTML = value;
+      el.classList.remove("hidden");
+    } else {
+      el.innerHTML = "";
+      el.classList.add("hidden");
+    }
+    return el;
+  }
+
+  function renderOfferings(root, data) {
+    var template = root.getElementById
+      ? root.getElementById("offering-card-template")
+      : document.getElementById("offering-card-template");
+    if (!template || !template.content) return;
+
+    root.querySelectorAll("[data-offerings-list]").forEach(function (container) {
+      // Skip if the build pre-rendered cards into this container already.
+      if (container.firstElementChild) return;
+
+      var listKey = container.getAttribute("data-offerings-list");
+      var sectionStyle = container.getAttribute("data-section-style") || "individual";
+      var railLabel = container.getAttribute("data-rail-label") || "Investment";
+      var slug = listKey === "groupCards" ? "grp" : "ind";
+      var cards = get(data, "offeringsSection." + listKey) || [];
+
+      container.textContent = "";
+
+      cards.forEach(function (card, i) {
+        var clone = template.content.cloneNode(true);
+        var article = clone.querySelector("article");
+        if (!article) return;
+
+        var titleId = "offering-" + slug + "-" + i + "-title";
+        article.setAttribute("aria-labelledby", titleId);
+
+        var img = article.querySelector('[data-slot="image"]');
+        if (img) {
+          img.setAttribute("src", card.image || "");
+          img.setAttribute("alt", card.imageAlt || "");
+        }
+
+        var titleEl = setSlotText(article, "title", card.title);
+        if (titleEl) titleEl.id = titleId;
+
+        var hasBadge = !!(card.badge && String(card.badge).trim());
+        var badgeEl = article.querySelector('[data-slot="badge"]');
+        if (badgeEl) {
+          if (hasBadge) {
+            badgeEl.textContent = card.badge;
+            badgeEl.classList.remove("hidden");
+          } else {
+            badgeEl.textContent = "";
+            badgeEl.classList.add("hidden");
+          }
+        }
+
+        setSlotText(article, "tagline", card.tagline);
+        setSlotHtml(article, "descriptionHtml", card.descriptionHtml);
+        setSlotText(article, "railLabel", railLabel);
+        setSlotText(article, "pricePrimary", card.pricePrimary);
+        setSlotText(article, "priceSecondary", card.priceSecondary);
+
+        var hasNote = !!(card.priceNote && String(card.priceNote).trim());
+        var hasSecondary = !!(card.priceSecondary && String(card.priceSecondary).trim());
+        var hasPrimary = !!(card.pricePrimary && String(card.pricePrimary).trim());
+        var noteEl = setSlotText(article, "priceNote", card.priceNote);
+        // Add a divider above the note only when it visually separates two lines.
+        if (noteEl && hasNote && (hasSecondary || hasPrimary)) {
+          noteEl.classList.add("pt-2", "border-t", "border-stone-200/80");
+        }
+
+        setSlotText(article, "ctaLabel", card.ctaLabel || "Inquire");
+
+        // Apply the section + variant classes after the slot helpers run, so
+        // the variant styles are always present (slot helpers don't touch them).
+        var variant = hasBadge ? "featured" : "default";
+        var taglineEl = article.querySelector('[data-slot="tagline"]');
+        var priceEl = article.querySelector('[data-slot="pricePrimary"]');
+        var ctaEl = article.querySelector('[data-slot="ctaLabel"]');
+        if (taglineEl) taglineEl.classList.add.apply(taglineEl.classList, OFFERING_STYLE[sectionStyle].tagline);
+        if (priceEl) {
+          priceEl.classList.add.apply(priceEl.classList, OFFERING_STYLE[sectionStyle].pricePrimary);
+          priceEl.classList.add.apply(priceEl.classList, OFFERING_STYLE[variant].pricePrimary);
+        }
+        if (ctaEl) ctaEl.classList.add.apply(ctaEl.classList, OFFERING_STYLE[variant].cta);
+
+        container.appendChild(clone);
+      });
+    });
+  }
+
+  function renderFaqItems(root, data) {
+    var template = document.getElementById("faq-item-template");
+    if (!template || !template.content) return;
+
+    root.querySelectorAll("[data-faq-list]").forEach(function (container) {
+      // Skip if the build pre-rendered items into this container already.
+      if (container.firstElementChild) return;
+
+      var items = get(data, "faqSection.items") || [];
+      container.textContent = "";
+
+      items.forEach(function (item) {
+        var clone = template.content.cloneNode(true);
+        setSlotText(clone, "question", item.question);
+        setSlotHtml(clone, "answerHtml", item.answerHtml);
+        container.appendChild(clone);
+      });
     });
   }
 
@@ -162,41 +311,14 @@
 
       applyText(root, "faqSection.heading", get(data, "faqSection.heading"));
       applyText(root, "faqSection.intro", get(data, "faqSection.intro"));
-      var faqs = get(data, "faqSection.items") || [];
-      faqs.forEach(function (_, i) {
-        var base = "faqSection.items." + i;
-        applyText(root, base + ".question", get(data, base + ".question"));
-        applyHtml(root, base + ".answerHtml", get(data, base + ".answerHtml"));
-      });
+      renderFaqItems(root, data);
 
       applyText(root, "offeringsSection.heading", get(data, "offeringsSection.heading"));
       applyText(root, "offeringsSection.individualIntro", get(data, "offeringsSection.individualIntro"));
       applyText(root, "offeringsSection.groupIntro", get(data, "offeringsSection.groupIntro"));
       applyText(root, "offeringsSection.footerLine2", get(data, "offeringsSection.footerLine2"));
 
-      function applyOfferingCards(listKey) {
-        var cards = get(data, "offeringsSection." + listKey) || [];
-        cards.forEach(function (_, i) {
-          var base = "offeringsSection." + listKey + "." + i;
-          applyText(root, base + ".image", get(data, base + ".image"));
-          applyAlt(root, base + ".imageAlt", get(data, base + ".imageAlt"));
-          [
-            "title",
-            "tagline",
-            "pricePrimary",
-            "priceSecondary",
-            "priceNote",
-            "ctaLabel",
-          ].forEach(function (f) {
-            applyText(root, base + "." + f, get(data, base + "." + f));
-          });
-          applyHtml(root, base + ".descriptionHtml", get(data, base + ".descriptionHtml"));
-          applyBadge(root, base + ".badge");
-        });
-      }
-
-      applyOfferingCards("individualCards");
-      applyOfferingCards("groupCards");
+      renderOfferings(root, data);
 
       [
         "footer.mission",

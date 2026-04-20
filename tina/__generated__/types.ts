@@ -344,13 +344,6 @@ export type HomeNavigationFilter = {
   mobileOfferings?: InputMaybe<StringFilter>;
 };
 
-export type ImageFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
 export type HomeHeroFilter = {
   eyebrow?: InputMaybe<StringFilter>;
   headline?: InputMaybe<StringFilter>;
@@ -358,12 +351,12 @@ export type HomeHeroFilter = {
   paragraph2?: InputMaybe<StringFilter>;
   primaryCta?: InputMaybe<StringFilter>;
   secondaryCta?: InputMaybe<StringFilter>;
-  image?: InputMaybe<ImageFilter>;
+  image?: InputMaybe<StringFilter>;
   imageAlt?: InputMaybe<StringFilter>;
 };
 
 export type HomeWisdomFilter = {
-  image?: InputMaybe<ImageFilter>;
+  image?: InputMaybe<StringFilter>;
   imageAlt?: InputMaybe<StringFilter>;
   eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
@@ -374,7 +367,7 @@ export type HomeWisdomFilter = {
 };
 
 export type HomePathwaysSectionPathwaysFilter = {
-  image?: InputMaybe<ImageFilter>;
+  image?: InputMaybe<StringFilter>;
   imageAlt?: InputMaybe<StringFilter>;
   tag?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
@@ -388,7 +381,7 @@ export type HomePathwaysSectionFilter = {
 };
 
 export type HomeAboutFilter = {
-  profileImage?: InputMaybe<ImageFilter>;
+  profileImage?: InputMaybe<StringFilter>;
   profileImageAlt?: InputMaybe<StringFilter>;
   name?: InputMaybe<StringFilter>;
   role?: InputMaybe<StringFilter>;
@@ -415,7 +408,7 @@ export type HomeFaqSectionFilter = {
 };
 
 export type HomeOfferingsSectionIndividualCardsFilter = {
-  image?: InputMaybe<ImageFilter>;
+  image?: InputMaybe<StringFilter>;
   imageAlt?: InputMaybe<StringFilter>;
   badge?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
@@ -428,7 +421,7 @@ export type HomeOfferingsSectionIndividualCardsFilter = {
 };
 
 export type HomeOfferingsSectionGroupCardsFilter = {
-  image?: InputMaybe<ImageFilter>;
+  image?: InputMaybe<StringFilter>;
   imageAlt?: InputMaybe<StringFilter>;
   badge?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;

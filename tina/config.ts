@@ -118,10 +118,11 @@ export default defineConfig({
                 description: "Uses the Contact → Booking URL or email if set; otherwise scrolls to the footer.",
               },
               {
-                type: "image",
+                type: "string",
                 name: "image",
-                label: "Hero image",
-                description: "Upload to /uploads or paste a full https:// URL.",
+                label: "Hero image URL",
+                description:
+                  "Paste a full https:// URL, or use a path like /uploads/file.jpg if the image lives in this repo.",
               },
               { type: "string", name: "imageAlt", label: "Hero image alt", description: "Describe the image for screen readers." },
             ],
@@ -132,10 +133,11 @@ export default defineConfig({
             label: "Wisdom section",
             fields: [
               {
-                type: "image",
+                type: "string",
                 name: "image",
-                label: "Image",
-                description: "Upload to /uploads or paste a full https:// URL.",
+                label: "Image URL",
+                description:
+                  "Paste a full https:// URL, or use a path like /uploads/file.jpg if the image lives in this repo.",
               },
               { type: "string", name: "imageAlt", label: "Image alt" },
               { type: "string", name: "eyebrow", label: "Eyebrow" },
@@ -183,10 +185,11 @@ export default defineConfig({
                 },
                 fields: [
                   {
-                    type: "image",
+                    type: "string",
                     name: "image",
-                    label: "Image",
-                    description: "Upload to /uploads or paste a full https:// URL.",
+                    label: "Image URL",
+                    description:
+                      "Paste a full https:// URL, or use a path like /uploads/file.jpg if the image lives in this repo.",
                   },
                   { type: "string", name: "imageAlt", label: "Image alt" },
                   { type: "string", name: "tag", label: "Tag" },
@@ -207,10 +210,11 @@ export default defineConfig({
             label: "About (Sophia)",
             fields: [
               {
-                type: "image",
+                type: "string",
                 name: "profileImage",
-                label: "Profile image",
-                description: "Upload to /uploads or paste a full https:// URL. Portrait orientation works best (4:5).",
+                label: "Profile image URL",
+                description:
+                  "Paste a full https:// URL, or use a path like /uploads/file.jpg if the image lives in this repo. Portrait orientation works best (4:5).",
               },
               { type: "string", name: "profileImageAlt", label: "Profile image alt" },
               { type: "string", name: "name", label: "Name" },
@@ -314,7 +318,7 @@ export default defineConfig({
                 name: "individualCards",
                 label: "Individual offerings",
                 description:
-                  "The page renders exactly two individual offerings. Reorder freely; adding a third will not appear on the page until the layout is updated.",
+                  "Add, reorder, or remove cards as needed — the page renders one full-width row per item. Set a Badge to highlight a card with the rose accent treatment; leave it blank for the default outline style.",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -323,10 +327,11 @@ export default defineConfig({
                 },
                 fields: [
                   {
-                    type: "image",
+                    type: "string",
                     name: "image",
-                    label: "Image",
-                    description: "Upload to /uploads or paste a full https:// URL.",
+                    label: "Image URL",
+                    description:
+                      "Paste a full https:// URL, or use a path like /uploads/file.jpg if the image lives in this repo.",
                   },
                   { type: "string", name: "imageAlt", label: "Image alt" },
                   {
@@ -369,7 +374,7 @@ export default defineConfig({
                 name: "groupCards",
                 label: "Group & workshop offerings",
                 description:
-                  "The page renders exactly three group offerings. Reorder freely; adding a fourth will not appear on the page until the layout is updated.",
+                  "Add, reorder, or remove cards as needed — the page renders one full-width row per item. Set a Badge to highlight a card with the rose accent treatment; leave it blank for the default outline style.",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -378,10 +383,11 @@ export default defineConfig({
                 },
                 fields: [
                   {
-                    type: "image",
+                    type: "string",
                     name: "image",
-                    label: "Image",
-                    description: "Upload to /uploads or paste a full https:// URL.",
+                    label: "Image URL",
+                    description:
+                      "Paste a full https:// URL, or use a path like /uploads/file.jpg if the image lives in this repo.",
                   },
                   { type: "string", name: "imageAlt", label: "Image alt" },
                   {

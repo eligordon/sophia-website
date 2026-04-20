@@ -251,13 +251,6 @@ input HomeNavigationFilter {
   mobileOfferings: StringFilter
 }
 
-input ImageFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
 input HomeHeroFilter {
   eyebrow: StringFilter
   headline: StringFilter
@@ -265,12 +258,12 @@ input HomeHeroFilter {
   paragraph2: StringFilter
   primaryCta: StringFilter
   secondaryCta: StringFilter
-  image: ImageFilter
+  image: StringFilter
   imageAlt: StringFilter
 }
 
 input HomeWisdomFilter {
-  image: ImageFilter
+  image: StringFilter
   imageAlt: StringFilter
   eyebrow: StringFilter
   heading: StringFilter
@@ -281,7 +274,7 @@ input HomeWisdomFilter {
 }
 
 input HomePathwaysSectionPathwaysFilter {
-  image: ImageFilter
+  image: StringFilter
   imageAlt: StringFilter
   tag: StringFilter
   title: StringFilter
@@ -295,7 +288,7 @@ input HomePathwaysSectionFilter {
 }
 
 input HomeAboutFilter {
-  profileImage: ImageFilter
+  profileImage: StringFilter
   profileImageAlt: StringFilter
   name: StringFilter
   role: StringFilter
@@ -322,7 +315,7 @@ input HomeFaqSectionFilter {
 }
 
 input HomeOfferingsSectionIndividualCardsFilter {
-  image: ImageFilter
+  image: StringFilter
   imageAlt: StringFilter
   badge: StringFilter
   title: StringFilter
@@ -335,7 +328,7 @@ input HomeOfferingsSectionIndividualCardsFilter {
 }
 
 input HomeOfferingsSectionGroupCardsFilter {
-  image: ImageFilter
+  image: StringFilter
   imageAlt: StringFilter
   badge: StringFilter
   title: StringFilter
