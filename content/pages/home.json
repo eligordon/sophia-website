@@ -191,6 +191,29 @@
     ],
     "footerLine2": "* Full or partial trades available *"
   },
+  "contactSection": {
+    "eyebrow": "Begin the conversation",
+    "heading": "Ready to claim your reproductive agency?",
+    "intro": "Send a note and Sophia will be in touch personally. Whether you're curious about a program, weighing a discovery call, or looking for a workshop for your community — start here.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "First and last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "topicLabel": "What brings you here?",
+    "topicPlaceholder": "Choose one…",
+    "topicOptions": [
+      "I'd like to book a discovery call",
+      "I'm interested in a program for myself",
+      "I'd like a workshop for my organization",
+      "I have a general question"
+    ],
+    "messageLabel": "Message",
+    "messagePlaceholder": "A few sentences about where you're at and what you're hoping to explore.",
+    "submitLabel": "Send message",
+    "reassurance": "I read every message personally and reply within two business days.",
+    "successHeadline": "Thank you — your message is on its way.",
+    "successBody": "I'll be in touch within two business days. In the meantime, take a deep breath and know that reaching out is itself a powerful first step."
+  },
   "contact": {
     "bookingUrl": "",
     "email": ""
@@ -199,8 +222,6 @@
     "mission": "Teaching body literacy as a tool for empowerment, safety, and liberation.",
     "location": "Wolfville, Nova Scotia, Canada",
     "locationSub": "From your first period to your last.",
-    "ctaHeadline": "Ready to claim your reproductive agency?",
-    "ctaButton": "Book My Discovery Call",
     "copyrightAfterYear": "Full Cycle Health & Fertility Awareness. Sophia Bush Anderson.",
     "tagline": "Empowerment through embodiment."
   }

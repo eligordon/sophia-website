@@ -115,7 +115,8 @@ export default defineConfig({
                 type: "string",
                 name: "secondaryCta",
                 label: "Secondary button",
-                description: "Uses the Contact → Booking URL or email if set; otherwise scrolls to the footer.",
+                description:
+                  "Uses Booking link → Booking URL or email if set; otherwise scrolls to the contact form.",
               },
               {
                 type: "string",
@@ -430,17 +431,80 @@ export default defineConfig({
           },
           {
             type: "object",
-            name: "contact",
-            label: "Contact & booking",
+            name: "contactSection",
+            label: "Contact form section",
             description:
-              "Destinations for every Get-in-touch / Book / Inquire / Register button. Set the Booking URL (Calendly, Cal.com, Tally, etc.) OR an email — whichever is set takes priority. If both are blank, buttons fall back to scrolling to the footer.",
+              "Editable copy for the contact form that sits above the footer. The form itself is wired to Netlify Forms — submissions arrive as email notifications you configure in the Netlify dashboard (Site → Forms → Form notifications). Field names are fixed (name, email, topic, message); only the labels, placeholders, and surrounding copy are edited here.",
+            fields: [
+              { type: "string", name: "eyebrow", label: "Eyebrow" },
+              { type: "string", name: "heading", label: "Heading" },
+              {
+                type: "string",
+                name: "intro",
+                label: "Intro paragraph",
+                ui: { component: "textarea" },
+              },
+              { type: "string", name: "nameLabel", label: "Name field — label" },
+              { type: "string", name: "namePlaceholder", label: "Name field — placeholder" },
+              { type: "string", name: "emailLabel", label: "Email field — label" },
+              { type: "string", name: "emailPlaceholder", label: "Email field — placeholder" },
+              { type: "string", name: "topicLabel", label: "Topic field — label" },
+              {
+                type: "string",
+                name: "topicPlaceholder",
+                label: "Topic field — placeholder option",
+                description: "Shown as the disabled first option (e.g. \"Choose one…\").",
+              },
+              {
+                type: "string",
+                name: "topicOptions",
+                label: "Topic options",
+                description:
+                  "One option per item. These appear in the dropdown and are submitted as the \"topic\" field value.",
+                list: true,
+              },
+              { type: "string", name: "messageLabel", label: "Message field — label" },
+              {
+                type: "string",
+                name: "messagePlaceholder",
+                label: "Message field — placeholder",
+                ui: { component: "textarea" },
+              },
+              { type: "string", name: "submitLabel", label: "Submit button label" },
+              {
+                type: "string",
+                name: "reassurance",
+                label: "Reassurance line (under the button)",
+                description: "Short note about response time, privacy, etc.",
+                ui: { component: "textarea" },
+              },
+              {
+                type: "string",
+                name: "successHeadline",
+                label: "Success — heading",
+                description: "Shown after a successful submission.",
+              },
+              {
+                type: "string",
+                name: "successBody",
+                label: "Success — body",
+                ui: { component: "textarea" },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "contact",
+            label: "Booking link (optional)",
+            description:
+              "Optional shortcut for the hero \"Get in touch\" button and every offering CTA: if you set a Booking URL (Calendly, Cal.com, etc.) or an email, those buttons jump straight there instead of scrolling to the contact form. Leave both blank to send everyone to the form section above the footer.",
             fields: [
               {
                 type: "string",
                 name: "bookingUrl",
                 label: "Booking URL",
                 description:
-                  "Full https:// link (e.g. Calendly). Used by the hero \"Get in touch\" button, every offering CTA, and the footer \"Book My Discovery Call\" button.",
+                  "Full https:// link (e.g. Calendly). Used by the hero \"Get in touch\" button and every offering CTA.",
               },
               {
                 type: "string",
@@ -454,6 +518,8 @@ export default defineConfig({
             type: "object",
             name: "footer",
             label: "Footer",
+            description:
+              "The footer is for brand wrap-up only — the conversion CTA lives in the Contact form section above. Keep this short and warm.",
             fields: [
               {
                 type: "string",
@@ -463,18 +529,6 @@ export default defineConfig({
               },
               { type: "string", name: "location", label: "Location line" },
               { type: "string", name: "locationSub", label: "Location subline" },
-              {
-                type: "string",
-                name: "ctaHeadline",
-                label: "CTA headline",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "string",
-                name: "ctaButton",
-                label: "CTA button",
-                description: "Uses the Contact → Booking URL or email if set; otherwise scrolls to the footer.",
-              },
               {
                 type: "string",
                 name: "copyrightAfterYear",

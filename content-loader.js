@@ -38,6 +38,42 @@
     });
   }
 
+  function applyPlaceholder(root, path, value) {
+    if (value == null) return;
+    root.querySelectorAll('[data-tina-placeholder="' + path + '"]').forEach(function (el) {
+      el.setAttribute("placeholder", value);
+    });
+  }
+
+  // Populate a <select data-tina-options="path"> with options from the array
+  // at `path`. Preserves any existing first <option> that has both
+  // [disabled] and [value=""] (the "Choose one…" placeholder), and updates
+  // its label from data-tina-placeholder-option if set.
+  function applySelectOptions(root, data) {
+    root.querySelectorAll("[data-tina-options]").forEach(function (select) {
+      if (select.tagName !== "SELECT") return;
+      var path = select.getAttribute("data-tina-options");
+      var options = get(data, path);
+      if (!Array.isArray(options)) return;
+
+      var placeholderPath = select.getAttribute("data-tina-placeholder-option");
+      var placeholderText = placeholderPath ? get(data, placeholderPath) : null;
+
+      var firstOpt = select.querySelector('option[disabled][value=""]');
+      select.textContent = "";
+      if (firstOpt) {
+        if (placeholderText != null) firstOpt.textContent = placeholderText;
+        select.appendChild(firstOpt);
+      }
+      options.forEach(function (label) {
+        if (label == null || String(label).trim() === "") return;
+        var opt = document.createElement("option");
+        opt.textContent = label;
+        select.appendChild(opt);
+      });
+    });
+  }
+
   // Visual variants applied to a cloned offering card.
   // Driven by the section ("individual" vs "group") and whether the card has
   // a badge set ("featured" vs "default"). Keeping the rules here means the
@@ -202,7 +238,7 @@
 
   // Resolve every CTA marked data-tina-href="contact" to the editable
   // bookingUrl (preferred) or mailto:email. If neither is set, the existing
-  // anchor (#footer-contact / #book-discovery-call) is kept as a fallback.
+  // anchor (#contact — the on-page contact form) is kept as a fallback.
   function applyContactLinks(root, data) {
     var bookingUrl = (get(data, "contact.bookingUrl") || "").trim();
     var email = (get(data, "contact.email") || "").trim();
@@ -321,11 +357,33 @@
       renderOfferings(root, data);
 
       [
+        "contactSection.eyebrow",
+        "contactSection.heading",
+        "contactSection.intro",
+        "contactSection.nameLabel",
+        "contactSection.emailLabel",
+        "contactSection.topicLabel",
+        "contactSection.messageLabel",
+        "contactSection.submitLabel",
+        "contactSection.reassurance",
+        "contactSection.successHeadline",
+        "contactSection.successBody",
+      ].forEach(function (p) {
+        applyText(root, p, get(data, p));
+      });
+      [
+        "contactSection.namePlaceholder",
+        "contactSection.emailPlaceholder",
+        "contactSection.messagePlaceholder",
+      ].forEach(function (p) {
+        applyPlaceholder(root, p, get(data, p));
+      });
+      applySelectOptions(root, data);
+
+      [
         "footer.mission",
         "footer.location",
         "footer.locationSub",
-        "footer.ctaHeadline",
-        "footer.ctaButton",
         "footer.copyrightAfterYear",
         "footer.tagline",
       ].forEach(function (p) {
