@@ -191,6 +191,10 @@
     ],
     "footerLine2": "* Full or partial trades available *"
   },
+  "contact": {
+    "bookingUrl": "",
+    "email": ""
+  },
   "footer": {
     "mission": "Teaching body literacy as a tool for empowerment, safety, and liberation.",
     "location": "Wolfville, Nova Scotia, Canada",

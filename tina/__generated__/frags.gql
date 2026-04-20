@@ -108,6 +108,11 @@ fragment HomeParts on Home {
     }
     footerLine2
   }
+  contact {
+    __typename
+    bookingUrl
+    email
+  }
   footer {
     __typename
     mission

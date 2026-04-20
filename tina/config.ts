@@ -56,6 +56,8 @@ export default defineConfig({
             type: "object",
             name: "seo",
             label: "SEO",
+            description:
+              "Shown in browser tabs and search results. Aim for ~55–60 characters in the title and ~150–160 in the description.",
             fields: [
               { type: "string", name: "title", label: "Page title" },
               {
@@ -70,6 +72,7 @@ export default defineConfig({
             type: "object",
             name: "navigation",
             label: "Navigation labels",
+            description: "Top navigation link text. Section anchors (#wisdom, #pathways, …) are fixed in the page.",
             fields: [
               { type: "string", name: "wisdom", label: "Wisdom" },
               { type: "string", name: "pathways", label: "Pathways" },
@@ -102,10 +105,25 @@ export default defineConfig({
                 label: "Supporting paragraph",
                 ui: { component: "textarea" },
               },
-              { type: "string", name: "primaryCta", label: "Primary button" },
-              { type: "string", name: "secondaryCta", label: "Secondary button" },
-              { type: "string", name: "image", label: "Hero image URL" },
-              { type: "string", name: "imageAlt", label: "Hero image alt" },
+              {
+                type: "string",
+                name: "primaryCta",
+                label: "Primary button",
+                description: "Scrolls to the Offerings section.",
+              },
+              {
+                type: "string",
+                name: "secondaryCta",
+                label: "Secondary button",
+                description: "Uses the Contact → Booking URL or email if set; otherwise scrolls to the footer.",
+              },
+              {
+                type: "image",
+                name: "image",
+                label: "Hero image",
+                description: "Upload to /uploads or paste a full https:// URL.",
+              },
+              { type: "string", name: "imageAlt", label: "Hero image alt", description: "Describe the image for screen readers." },
             ],
           },
           {
@@ -113,7 +131,12 @@ export default defineConfig({
             name: "wisdom",
             label: "Wisdom section",
             fields: [
-              { type: "string", name: "image", label: "Image URL" },
+              {
+                type: "image",
+                name: "image",
+                label: "Image",
+                description: "Upload to /uploads or paste a full https:// URL.",
+              },
               { type: "string", name: "imageAlt", label: "Image alt" },
               { type: "string", name: "eyebrow", label: "Eyebrow" },
               { type: "string", name: "heading", label: "Heading" },
@@ -121,6 +144,7 @@ export default defineConfig({
                 type: "string",
                 name: "body1Html",
                 label: "First paragraph (HTML allowed)",
+                description: "You can use simple HTML tags like <em>, <strong>, and <a href=\"…\">.",
                 ui: { component: "textarea" },
               },
               {
@@ -149,6 +173,8 @@ export default defineConfig({
                 type: "object",
                 name: "pathways",
                 label: "Pathway cards",
+                description:
+                  "The page renders exactly four cards in a 2×2 / row-of-four grid. Adding more or fewer will break the layout.",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -156,7 +182,12 @@ export default defineConfig({
                   }),
                 },
                 fields: [
-                  { type: "string", name: "image", label: "Image URL" },
+                  {
+                    type: "image",
+                    name: "image",
+                    label: "Image",
+                    description: "Upload to /uploads or paste a full https:// URL.",
+                  },
                   { type: "string", name: "imageAlt", label: "Image alt" },
                   { type: "string", name: "tag", label: "Tag" },
                   { type: "string", name: "title", label: "Title" },
@@ -175,7 +206,12 @@ export default defineConfig({
             name: "about",
             label: "About (Sophia)",
             fields: [
-              { type: "string", name: "profileImage", label: "Profile image URL" },
+              {
+                type: "image",
+                name: "profileImage",
+                label: "Profile image",
+                description: "Upload to /uploads or paste a full https:// URL. Portrait orientation works best (4:5).",
+              },
               { type: "string", name: "profileImageAlt", label: "Profile image alt" },
               { type: "string", name: "name", label: "Name" },
               { type: "string", name: "role", label: "Role" },
@@ -198,6 +234,8 @@ export default defineConfig({
                 type: "string",
                 name: "trainingHtml",
                 label: "Training & credentials (HTML)",
+                description:
+                  "Wrap each paragraph in <p>…</p>. Links use <a href=\"https://…\">label</a>; non-breaking spaces are &nbsp;.",
                 ui: { component: "textarea" },
               },
               {
@@ -209,7 +247,8 @@ export default defineConfig({
               {
                 type: "string",
                 name: "values",
-                label: "Shared values (one per line in UI)",
+                label: "Shared values",
+                description: "One value per item. Use the buttons to add, reorder, or remove items.",
                 list: true,
               },
               {
@@ -231,6 +270,7 @@ export default defineConfig({
                 type: "object",
                 name: "items",
                 label: "Questions",
+                description: "Add, reorder, or remove FAQ items as needed.",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -243,6 +283,8 @@ export default defineConfig({
                     type: "string",
                     name: "answerHtml",
                     label: "Answer (HTML)",
+                    description:
+                      "Wrap paragraphs in <p>…</p>. You can use <strong>, <em>, and <a href=\"…\">.",
                     ui: { component: "textarea" },
                   },
                 ],
@@ -271,6 +313,8 @@ export default defineConfig({
                 type: "object",
                 name: "individualCards",
                 label: "Individual offerings",
+                description:
+                  "The page renders exactly two individual offerings. Reorder freely; adding a third will not appear on the page until the layout is updated.",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -278,12 +322,18 @@ export default defineConfig({
                   }),
                 },
                 fields: [
-                  { type: "string", name: "image", label: "Image URL" },
+                  {
+                    type: "image",
+                    name: "image",
+                    label: "Image",
+                    description: "Upload to /uploads or paste a full https:// URL.",
+                  },
                   { type: "string", name: "imageAlt", label: "Image alt" },
                   {
                     type: "string",
                     name: "badge",
                     label: "Badge (optional)",
+                    description: "e.g. \"Active Enrollment\". Leave blank to hide the badge.",
                   },
                   { type: "string", name: "title", label: "Title" },
                   {
@@ -296,6 +346,8 @@ export default defineConfig({
                     type: "string",
                     name: "descriptionHtml",
                     label: "Description (HTML)",
+                    description:
+                      "Wrap paragraphs in <p>…</p>. You can use <em>, <strong>, and <abbr title=\"…\">.",
                     ui: { component: "textarea" },
                   },
                   { type: "string", name: "pricePrimary", label: "Price (primary line)" },
@@ -316,6 +368,8 @@ export default defineConfig({
                 type: "object",
                 name: "groupCards",
                 label: "Group & workshop offerings",
+                description:
+                  "The page renders exactly three group offerings. Reorder freely; adding a fourth will not appear on the page until the layout is updated.",
                 list: true,
                 ui: {
                   itemProps: (item) => ({
@@ -323,12 +377,18 @@ export default defineConfig({
                   }),
                 },
                 fields: [
-                  { type: "string", name: "image", label: "Image URL" },
+                  {
+                    type: "image",
+                    name: "image",
+                    label: "Image",
+                    description: "Upload to /uploads or paste a full https:// URL.",
+                  },
                   { type: "string", name: "imageAlt", label: "Image alt" },
                   {
                     type: "string",
                     name: "badge",
                     label: "Badge (optional)",
+                    description: "e.g. \"Active Enrollment\". Leave blank to hide the badge.",
                   },
                   { type: "string", name: "title", label: "Title" },
                   {
@@ -341,6 +401,8 @@ export default defineConfig({
                     type: "string",
                     name: "descriptionHtml",
                     label: "Description (HTML)",
+                    description:
+                      "Wrap paragraphs in <p>…</p>. You can use <em>, <strong>, and <abbr title=\"…\">.",
                     ui: { component: "textarea" },
                   },
                   { type: "string", name: "pricePrimary", label: "Price (primary line)" },
@@ -362,6 +424,28 @@ export default defineConfig({
           },
           {
             type: "object",
+            name: "contact",
+            label: "Contact & booking",
+            description:
+              "Destinations for every Get-in-touch / Book / Inquire / Register button. Set the Booking URL (Calendly, Cal.com, Tally, etc.) OR an email — whichever is set takes priority. If both are blank, buttons fall back to scrolling to the footer.",
+            fields: [
+              {
+                type: "string",
+                name: "bookingUrl",
+                label: "Booking URL",
+                description:
+                  "Full https:// link (e.g. Calendly). Used by the hero \"Get in touch\" button, every offering CTA, and the footer \"Book My Discovery Call\" button.",
+              },
+              {
+                type: "string",
+                name: "email",
+                label: "Contact email",
+                description: "Used as a mailto: fallback if no booking URL is set.",
+              },
+            ],
+          },
+          {
+            type: "object",
             name: "footer",
             label: "Footer",
             fields: [
@@ -379,7 +463,12 @@ export default defineConfig({
                 label: "CTA headline",
                 ui: { component: "textarea" },
               },
-              { type: "string", name: "ctaButton", label: "CTA button" },
+              {
+                type: "string",
+                name: "ctaButton",
+                label: "CTA button",
+                description: "Uses the Contact → Booking URL or email if set; otherwise scrolls to the footer.",
+              },
               {
                 type: "string",
                 name: "copyrightAfterYear",

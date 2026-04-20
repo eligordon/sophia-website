@@ -51,6 +51,27 @@
     });
   }
 
+  // Resolve every CTA marked data-tina-href="contact" to the editable
+  // bookingUrl (preferred) or mailto:email. If neither is set, the existing
+  // anchor (#footer-contact / #book-discovery-call) is kept as a fallback.
+  function applyContactLinks(root, data) {
+    var bookingUrl = (get(data, "contact.bookingUrl") || "").trim();
+    var email = (get(data, "contact.email") || "").trim();
+    var href = bookingUrl || (email ? "mailto:" + email : "");
+    if (!href) return;
+    var external = /^https?:\/\//i.test(href);
+    root.querySelectorAll('[data-tina-href="contact"]').forEach(function (el) {
+      el.setAttribute("href", href);
+      if (external) {
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener noreferrer");
+      } else {
+        el.removeAttribute("target");
+        el.removeAttribute("rel");
+      }
+    });
+  }
+
   fetch("content/pages/home.json")
     .then(function (r) {
       if (!r.ok) throw new Error(r.statusText);
@@ -188,6 +209,8 @@
       ].forEach(function (p) {
         applyText(root, p, get(data, p));
       });
+
+      applyContactLinks(root, data);
     })
     .catch(function (e) {
       console.warn("[content-loader] Could not load content/pages/home.json:", e.message);

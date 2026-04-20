@@ -199,6 +199,11 @@ type HomeOfferingsSection {
   footerLine2: String
 }
 
+type HomeContact {
+  bookingUrl: String
+  email: String
+}
+
 type HomeFooter {
   mission: String
   location: String
@@ -218,6 +223,7 @@ type Home implements Node & Document {
   about: HomeAbout
   faqSection: HomeFaqSection
   offeringsSection: HomeOfferingsSection
+  contact: HomeContact
   footer: HomeFooter
   id: ID!
   _sys: SystemInfo!
@@ -245,6 +251,13 @@ input HomeNavigationFilter {
   mobileOfferings: StringFilter
 }
 
+input ImageFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
 input HomeHeroFilter {
   eyebrow: StringFilter
   headline: StringFilter
@@ -252,12 +265,12 @@ input HomeHeroFilter {
   paragraph2: StringFilter
   primaryCta: StringFilter
   secondaryCta: StringFilter
-  image: StringFilter
+  image: ImageFilter
   imageAlt: StringFilter
 }
 
 input HomeWisdomFilter {
-  image: StringFilter
+  image: ImageFilter
   imageAlt: StringFilter
   eyebrow: StringFilter
   heading: StringFilter
@@ -268,7 +281,7 @@ input HomeWisdomFilter {
 }
 
 input HomePathwaysSectionPathwaysFilter {
-  image: StringFilter
+  image: ImageFilter
   imageAlt: StringFilter
   tag: StringFilter
   title: StringFilter
@@ -282,7 +295,7 @@ input HomePathwaysSectionFilter {
 }
 
 input HomeAboutFilter {
-  profileImage: StringFilter
+  profileImage: ImageFilter
   profileImageAlt: StringFilter
   name: StringFilter
   role: StringFilter
@@ -309,7 +322,7 @@ input HomeFaqSectionFilter {
 }
 
 input HomeOfferingsSectionIndividualCardsFilter {
-  image: StringFilter
+  image: ImageFilter
   imageAlt: StringFilter
   badge: StringFilter
   title: StringFilter
@@ -322,7 +335,7 @@ input HomeOfferingsSectionIndividualCardsFilter {
 }
 
 input HomeOfferingsSectionGroupCardsFilter {
-  image: StringFilter
+  image: ImageFilter
   imageAlt: StringFilter
   badge: StringFilter
   title: StringFilter
@@ -341,6 +354,11 @@ input HomeOfferingsSectionFilter {
   individualCards: HomeOfferingsSectionIndividualCardsFilter
   groupCards: HomeOfferingsSectionGroupCardsFilter
   footerLine2: StringFilter
+}
+
+input HomeContactFilter {
+  bookingUrl: StringFilter
+  email: StringFilter
 }
 
 input HomeFooterFilter {
@@ -362,6 +380,7 @@ input HomeFilter {
   about: HomeAboutFilter
   faqSection: HomeFaqSectionFilter
   offeringsSection: HomeOfferingsSectionFilter
+  contact: HomeContactFilter
   footer: HomeFooterFilter
 }
 
@@ -507,6 +526,11 @@ input HomeOfferingsSectionMutation {
   footerLine2: String
 }
 
+input HomeContactMutation {
+  bookingUrl: String
+  email: String
+}
+
 input HomeFooterMutation {
   mission: String
   location: String
@@ -526,6 +550,7 @@ input HomeMutation {
   about: HomeAboutMutation
   faqSection: HomeFaqSectionMutation
   offeringsSection: HomeOfferingsSectionMutation
+  contact: HomeContactMutation
   footer: HomeFooterMutation
 }
 
